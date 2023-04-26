@@ -1,14 +1,32 @@
+mixin menu-item(url, icon, name)
+	li.menu-item(itemprop="item" )
+		a(href= `${url}` itemprop="url")
+			.icon-wrap
+				+icon(`menu-${icon}`)
+			span!= name
 
 mixin mnu()
 	nav
 		ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-			each link in nav
-				li.menu-item(itemprop="item" ): a(href= link.url itemprop="url")= link.name
-				if link.subnav
-					li.menu-item.menu-item-has-children
-						a(href="#" itemprop="url") О нас
-						ul.sub-menu
-							each sublink in link.subnav
-								li.menu-item(itemprop="item" ): a(href= sublink.url itemprop="url")= sublink.name
+			+menu-item(`#`, `ticket`, `Промокоды`)
+			+menu-item(`#`, `food`, `Еда и&nbsp;продукты`)
+			+menu-item(`#`, `shoe`, `Одежда и&nbsp;обувь`)
+			+menu-item(`#`, `electronics`, `Электроника`)
+			+menu-item(`#`, `beauty`, `Красота и&nbsp;парфюм`)
+			+menu-item(`#`, `house`, `Дом и&nbsp;ремонт`)
+			+menu-item(`#`, `hobby`, `Хобби и&nbsp;развлечения`)
+			+menu-item(`#`, `jewelry`, `Цветы и&nbsp;подарки`)
+			+menu-item(`#`, `repear`, `Сервисы и&nbsp;услуги`)
+			+menu-item(`#`, `plane`, `Путешествия`)
+			li.menu-item.menu-item--all(itemprop="item" )
+				a(href= `#` itemprop="url") Все категории 
+			//- each link in nav
+			//- 	li.menu-item(itemprop="item" ): a(href= link.url itemprop="url")= link.name
+			//- 	if link.subnav
+			//- 		li.menu-item.menu-item-has-children
+			//- 			a(href="#" itemprop="url") О нас
+			//- 			ul.sub-menu
+			//- 				each sublink in link.subnav
+			//- 					li.menu-item(itemprop="item" ): a(href= sublink.url itemprop="url")= sublink.name
 
 //- menu
