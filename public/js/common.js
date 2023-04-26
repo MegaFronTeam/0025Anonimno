@@ -338,6 +338,7 @@ const JSCCommon = {
 		};
 	
 		convertImages('.img-svg-js');
+		convertImages('.nav-icon img');
   },
 	disabledBtn(input = '.form-wrap__policy input', btn = ".form-wrap__btn", parent = ".form-wrap") {
 		$(document).on("change", input, function () {

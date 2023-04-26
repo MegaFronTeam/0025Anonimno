@@ -1,25 +1,25 @@
 mixin menu-item(url, icon, name)
 	li.menu-item(itemprop="item" )
-		a(href= `${url}` itemprop="url")
-			.icon-wrap
-				+icon(`menu-${icon}`)
+		a(href= `${url}` itemprop="url" )
+			.nav-icon&attributes(attributes)
+				+img(`img/svg/menu-${icon}.svg`)
 			span!= name
 
 mixin mnu()
 	nav
 		ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-			+menu-item(`#`, `ticket`, `Промокоды`)
-			+menu-item(`#`, `food`, `Еда и&nbsp;продукты`)
-			+menu-item(`#`, `shoe`, `Одежда и&nbsp;обувь`)
-			+menu-item(`#`, `electronics`, `Электроника`)
-			+menu-item(`#`, `beauty`, `Красота и&nbsp;парфюм`)
-			+menu-item(`#`, `house`, `Дом и&nbsp;ремонт`)
-			+menu-item(`#`, `hobby`, `Хобби и&nbsp;развлечения`)
-			+menu-item(`#`, `jewelry`, `Цветы и&nbsp;подарки`)
-			+menu-item(`#`, `repear`, `Сервисы и&nbsp;услуги`)
-			+menu-item(`#`, `plane`, `Путешествия`)
+			+menu-item(`#`, `ticket`, `Промокоды`)(style="--bgColor: #FCFAD5;")
+			+menu-item(`#`, `food`, `Еда и&nbsp;продукты`)(style="--bgColor: #D3FFDD;")
+			+menu-item(`#`, `shoe`, `Одежда и&nbsp;обувь`)(style="--bgColor: #E2F5FF;")
+			+menu-item(`#`, `electronics`, `Электроника`)(style="--bgColor: #F5E9FF;")
+			+menu-item(`#`, `beauty`, `Красота и&nbsp;парфюм`)(style="--bgColor: #FEDEF3;")
+			+menu-item(`#`, `house`, `Дом и&nbsp;ремонт`)(style="--bgColor: #FEDEF3;")
+			+menu-item(`#`, `hobby`, `Хобби и&nbsp;развлечения`)(style="--bgColor: #DAFDFF;")
+			+menu-item(`#`, `jewelry`, `Цветы и&nbsp;подарки`)(style="--bgColor: #EAFBD4;")
+			+menu-item(`#`, `repear`, `Сервисы и&nbsp;услуги`)(style="--bgColor: #F2E6E2;")
+			+menu-item(`#`, `plane`, `Путешествия`)(style="--bgColor: #E4F2FF;")
 			li.menu-item.menu-item--all(itemprop="item" )
-				a(href= `#` itemprop="url") Все категории 
+				a(href= `#` itemprop="url") Все категории
 			//- each link in nav
 			//- 	li.menu-item(itemprop="item" ): a(href= link.url itemprop="url")= link.name
 			//- 	if link.subnav
