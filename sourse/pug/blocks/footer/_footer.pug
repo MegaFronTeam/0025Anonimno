@@ -1,9 +1,12 @@
 mixin footer()
 	+b.FOOTER.footer.section
-		.container
-			.row
-				.col
-					
-				.col Footer
-				.col
-				.col-auto
+		.container-fluid
+			+e.row.row
+				.col-md-auto
+					+e.copyright 2023 Epicris
+				.col-md-auto
+					a(href="#") Реклама и&nbsp;контакты
+				.col-md-auto
+					a(href="#") Политика конфиденциальности
+				.col-md-auto
+					a(href="#") Все категории
