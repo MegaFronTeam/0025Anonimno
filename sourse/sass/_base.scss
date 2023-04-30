@@ -16,6 +16,9 @@
 body,
 html {
 	font-size: var(--bs-body-font-size);
+	// @include media-breakpoint-down(lg) {
+	// 	font-size: 16px;
+	// }
 }
 html{
 	-webkit-text-size-adjust: 100%;
@@ -545,4 +548,24 @@ iframe {
 	max-width: 340px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.container {
+	--bs-gutter-x: #{rem(32)};
+	@include media-breakpoint-up(xxl) {
+		--bs-gutter-x: #{rem(76)};
+	}
+	@include media-breakpoint-up(xl) {
+		--bs-gutter-x: #{rem(60)};
+	}
+	@include media-breakpoint-up(lg) {
+		--bs-gutter-x: #{rem(48)};
+	}
+}
+
+.btn {
+	
+	&-primary {
+
+	}
 }

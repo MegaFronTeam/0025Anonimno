@@ -25,11 +25,13 @@ mixin top-nav()
 				.col-auto
 					+menu-toggle()
 				.col
+					+search()
+				.col-auto
+					+e.btn.btn.btn-sm.btn-primary(href='#') Оставить отзыв
+				.col-auto.p-0.m-0
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
 							+menu-toggle()
 							+mnu()
-								
-					
 				//- .col-auto.d-lg-none
 	// end top-nav
