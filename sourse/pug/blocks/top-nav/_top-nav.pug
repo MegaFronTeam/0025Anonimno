@@ -12,9 +12,13 @@ mixin mob-mnu()
 		//- let dataJson = JSON.parse(json);
 	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js
-		+b.toggle-menu-mobile--js
-			span
+		//- +b.toggle-menu-mobile--js
+		//- 	span
 		+e.inner
+			+e.wrap
+				+menu-toggle()
+				+e.logo.d-lg-none(href='/') ANONIMNO
+			+e.btn.btn.btn-sm.btn-primary.d-md-none(href='#') Оставить отзыв
 			+mnu()
 	//  мобильное меню
 mixin top-nav() 
@@ -30,13 +34,13 @@ mixin top-nav()
 					+search()
 				.col-auto.d-none.d-md-block
 					+e.btn.btn.btn-sm.btn-primary(href='#') Оставить отзыв
-				.col-auto.p-0.m-0
-					.menu-mobile.menu-mobile--js
-						.menu-mobile__inner
-							+e.wrap
-								+menu-toggle()
-								+e.logo.d-lg-none(href='/') ANONIMNO
-							+e.btn.btn.btn-sm.btn-primary.d-md-none(href='#') Оставить отзыв
-							+mnu()
+				//- .col-auto.p-0.m-0
+				//- 	.menu-mobile.menu-mobile--js
+				//- 		.menu-mobile__inner
+				//- 			+e.wrap
+				//- 				+menu-toggle()
+				//- 				+e.logo.d-lg-none(href='/') ANONIMNO
+				//- 			+e.btn.btn.btn-sm.btn-primary.d-md-none(href='#') Оставить отзыв
+				//- 			+mnu()
 				//- .col-auto.d-lg-none
 	// end top-nav

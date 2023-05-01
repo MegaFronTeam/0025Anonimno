@@ -7,6 +7,10 @@
 	fill: currentColor;
 }
 
+.icon-arrow-right {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
 .icon-basket {
 	font-size:math.div(24,10)*1rem;
 	width: math.div(22,24)*1em;
@@ -23,7 +27,19 @@
 	font-size:math.div(24,10)*1rem;
 	width: math.div(24,24)*1em;
 }
+.icon-comments {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
 .icon-cross {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
+.icon-dislike {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
+.icon-eye {
 	font-size:math.div(24,10)*1rem;
 	width: math.div(24,24)*1em;
 }
@@ -32,6 +48,10 @@
 	width: math.div(24,24)*1em;
 }
 .icon-instagram {
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
+}
+.icon-like {
 	font-size:math.div(24,10)*1rem;
 	width: math.div(24,24)*1em;
 }

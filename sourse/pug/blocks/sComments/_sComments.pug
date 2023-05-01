@@ -1,0 +1,68 @@
+mixin sComments(data)
+	// start sComments
+	+b.sComments.section#sComments&attributes(attributes)
+		//- +e.container.container-fluid.container-lg
+		+e.wrap
+			+e.head-row.row
+				.col
+					+e.btn(href='#')
+						+icon('comments')
+						| 180
+				.col-auto
+					+e.likes
+						+e.btn(href='#')
+							+icon('like')
+							| 24
+						+e.btn(href='#')
+							+icon('dislike')
+							| 4
+			h3 Комментарии
+			+e.comments
+				+e.comment
+					+e.avatar(style="--bgColor: #FFCC00"): +img('img/avatar-1.jpg')
+					+e.comment-wrap
+						.row
+							.col-auto
+								+e.name &lt;Username&gt;
+							.col-auto
+								+e.date date/time
+						p Я&nbsp;вот читаю из&nbsp;года в&nbsp;год из&nbsp;десятилетие в&nbsp;десятилетие&nbsp;&mdash; постоянно цены растут, а&nbsp;зарплаты- нет. Значит раньше люди жили сказочно богато? Если нищаем, нищаем..
+						.row
+							.col
+								+e.call-back(href='#') Ответить
+							.col-auto
+								+e.likes
+									+e.btn(href='#')
+										+icon('like')
+										| 24
+									+e.btn(href='#')
+										+icon('dislike')
+										| 4
+				+e.comment--answer
+					+e.avatar(style="--bgColor: #D0D0D0"): +img('img/avatar-2.jpg')
+					+e.comment-wrap
+						.row
+							.col-auto
+								+e.name &lt;Username&gt;
+							.col-auto
+								+e.date date/time
+						p Я&nbsp;вот читаю из&nbsp;года в&nbsp;год из&nbsp;десятилетие в&nbsp;десятилетие&nbsp;&mdash; постоянно цены растут, а&nbsp;зарплаты- нет. Значит раньше люди жили сказочно богато? Если нищаем, нищаем..
+						.row
+							.col
+								+e.call-back(href='#') Ответить
+							.col-auto
+								+e.likes
+									+e.btn(href='#')
+										+icon('like')
+										| 24
+									+e.btn(href='#')
+										+icon('dislike')
+										| 4
+			+e.show-more.btn.btn-light(href='#') Ещё 30 комментариев из 180
+			+e.chat
+				+e.avatar(style="--bgColor: #FFCC00"): +img('img/avatar-1.jpg')
+				+e.form-wrap
+					form
+						input(type="text" placeholder='Placeholder')
+						button(type="submit"): +icon('arrow-right')
+	// end sComments

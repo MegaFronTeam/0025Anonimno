@@ -376,11 +376,14 @@ function eventHandler() {
 
 
 	function setFixedNav() {
-		let topNav = document.querySelector('.top-nav  ');
+		let topNav = document.querySelector('.header');
 		if (!topNav) return;
-		window.scrollY > 0
-			? topNav.classList.add('fixed')
-			: topNav.classList.remove('fixed');
+		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		// console.log(scrollTop);
+
+		scrollTop > 160 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
+		scrollTop > 250 ? topNav.classList.add('fixed-animate') : topNav.classList.remove('fixed-animate');
+		scrollTop > 400 ? topNav.classList.add('fixed-show') : topNav.classList.remove('fixed-show');
 	}
 
 	function whenResize() {
@@ -439,10 +442,22 @@ function eventHandler() {
 
 	// modal window
 
-	
-    
- 
-
+	document.addEventListener('click', function(e) {
+		let seachBlockTarget = e.target.closest('.search-block__content');
+		let toggleTarget = e.target.closest('.search-block__toggle--js')
+		let toggle = document.querySelector('.search-block__toggle--js');
+		let deleteTextTarget = document.querySelector('.search-block__close');
+		if(toggleTarget) {
+			toggle.nextElementSibling.classList.toggle('active');
+		} 
+		if(!seachBlockTarget && !toggleTarget) {
+			toggle.nextElementSibling.classList.remove('active');
+		}
+		if(deleteTextTarget) {
+			toggle.nextElementSibling.querySelector('input').value = '';
+			toggle.nextElementSibling.querySelector('input').focus();
+		}
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

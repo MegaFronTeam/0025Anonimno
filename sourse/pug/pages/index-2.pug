@@ -9,7 +9,7 @@ include ../blocks/sNews/_sNews.pug
 include ../blocks/sComments/_sComments.pug
 
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= 'main-page-2' 
 	- let  bg= 'main.jpg'
 
 block title
@@ -22,8 +22,10 @@ block pagecontent
 	+parts('header')
 	main
 		//- +headerBlock
-		+sContent
+		.container-fluid.container-lg
 			+img('img/sContent-img-1.png').bg-img
+		+sContent
+			+sidebar
 			+e.wrap
 				+breadcrumb('Epicris', 'Путешествия')
 				h1 ТОП-8 лучших сайтов для покупки авиабилетов&nbsp;&mdash; Рейтинг 2023 года

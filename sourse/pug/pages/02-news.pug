@@ -1,0 +1,29 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sNews/_sNews.pug
+include ../blocks/sComments/_sComments.pug
+
+block variables
+	- let  mainPage= 'news-page' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= 'ANONIMNO'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		+sNews2
+	+parts('footer')
+      
+
+
+
