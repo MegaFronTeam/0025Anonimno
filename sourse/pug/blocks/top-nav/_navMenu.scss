@@ -23,9 +23,16 @@
 }
 
 .toggle-menu-mobile {
-	--h: #{em(2)};
+	--h: #{rem(2)};
 	--color: #{$primary};
-	--position: calc(var(--h) * 2);
+	--position: calc(var(--h) * 2.5);
+	@include media-breakpoint-up(md) {
+		--color: #231F20;
+
+		border-radius: 16px;
+		background-color: $primary;
+		padding: rem(22) 0;
+	}
 	&.on span {
 		--color: transparent;
 	}
@@ -37,9 +44,18 @@
 	display: block;
 	height: calc(var(--h) * 12);
 	position: relative;
-	font-size: 32px;
+	font-size: 24px;
 	width: 1em;
+	text-align: center;
 	cursor: pointer;
+	@include media-breakpoint-up(md) {
+		font-size: 52px;
+		height: calc(var(--h) * 24);
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 64px;
+		height: calc(var(--h) * 28);
+	}
 	span:after,
 	span:before {
 		content: "";
@@ -47,7 +63,8 @@
 		left: 0;
 	}
 	span {
-		@include a-cent(y);
+		@include a-cent;
+		// @include a-cent(y);
 		display: block;
 	}
 
@@ -63,13 +80,14 @@
 	span,
 	span:after,
 	span:before {
-		// width: 32px;
-		width: 1em;
+		width: 18px;
+		// width: 1em;
 		height: var(--h);
 		background-color: var(--color);
 		transition: all 0.3s;
 		backface-visibility: hidden;
 		transform-origin: 50% 50%;
+		border-radius: 4px;
 	}
 }
 // @include media-breakpoint-down(lg) {
@@ -77,10 +95,10 @@
 .menu-mobile {
 	position: fixed !important;
 	z-index: 999;
-	max-width: 85%;
+	max-width: rem(280);
 	// height: calc(var(--vh, 1vh) * 100);
 	// height: 100vh;
-	width: 280px;
+	width: 100%;
 	top: 0;
 	// left: 0;
 	left: 0;
@@ -96,16 +114,19 @@
 	will-change: transform;
 
 	.toggle-menu-mobile {
-		margin-left: -15%;
-		position: absolute;
-		left: 0;
-		right: auto;
+		// margin-left: -15%;
+		// position: absolute;
+		// left: 0;
+		// right: auto;
 		color: #fff;
-		top: 10px;
+		// top: 10px;
 		z-index: 9999;
 		span:after,
 		span:before {
-			--color: #ffffff;
+			--color: #{$primary};
+			@include media-breakpoint-up(md) {
+				--color: #231F20;
+			}
 		}
 	}
 	&__inner {
@@ -154,6 +175,7 @@
 			// font-size: 16px;
 			display: flex;
 			align-items: center;
+			color: #000;
 			&:hover {
 				.nav-icon {
 					background-color: $primary;
@@ -181,6 +203,15 @@
 			// 	font-size: rem(24);
 			// 	color: $secondary;
 			// }
+		}
+	}
+	.top-nav {
+		&__wrap {
+			margin-bottom: rem(24);
+		}
+		&__btn {
+			width: 100%;
+			margin-bottom: rem(24);
 		}
 	}
 }

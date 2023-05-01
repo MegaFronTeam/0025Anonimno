@@ -33,10 +33,14 @@ mixin addblock()
 
 mixin search()
 	+b.search-block
-		form
-			input(type="text" placeholder="Поиск по номеру или названию запчасти")
-			button 
-				+icon("search")
+		+e.toggle--js: +icon("search")
+		+e.content
+			form
+				input(type="text" placeholder="Поиск")
+				+e.BUTTON.search 
+					+icon("search")
+				+e.BUTTON.close
+					+icon("cross")
 
 mixin page-head(t,...items)
 	+b.page-head

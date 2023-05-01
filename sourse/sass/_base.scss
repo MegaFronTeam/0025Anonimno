@@ -550,10 +550,12 @@ iframe {
 	margin-right: auto;
 }
 
-.container {
+.custom-container {
 	--bs-gutter-x: #{rem(32)};
 	@include media-breakpoint-up(xxl) {
 		--bs-gutter-x: #{rem(76)};
+
+		max-width: calc(#{rem(1844)} + var(--bs-gutter-x));
 	}
 	@include media-breakpoint-up(xl) {
 		--bs-gutter-x: #{rem(60)};
@@ -567,5 +569,10 @@ iframe {
 	
 	&-primary {
 
+	}
+	&-sm {
+		@include media-breakpoint-down(md) {
+			--bs-btn-padding-y: #{rem(9)};
+		}
 	}
 }
