@@ -623,11 +623,11 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
+$h1-font-size:                rem(44) !default;
+$h2-font-size:                rem(44) !default;
+$h3-font-size:                rem(32) !default;
+$h4-font-size:                rem(28) !default;
+$h5-font-size:                rem(24) !default;
 $h6-font-size:                $font-size-base !default;
 // scss-docs-end font-variables
 
@@ -647,7 +647,7 @@ $headings-margin-bottom:      $spacer * .5 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        600 !default;
-$headings-line-height:        1.25 !default;
+$headings-line-height:        1.27 !default;
 $headings-color:              null !default;
 // scss-docs-end headings-variables
 
