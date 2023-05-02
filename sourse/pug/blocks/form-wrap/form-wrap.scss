@@ -6,9 +6,13 @@
 		margin-bottom: 0;
 		--sp-y: #{$input-padding-y};
 		--fz: #{$input-font-size};
+		@include media-breakpoint-down(md) {
+			--fz: #{rem(16)};
+			--sp-y: #{rem(14)};
+		}
 	}
-	&__btn {
-	}
+	// &__btn {
+	// }
 	&__input {
 		// @extend .form-control;
 		//  outline: 0 !important;
@@ -42,8 +46,8 @@
 		max-width: calc(100% - #{$input-padding-x});
 	}
 	&__input {
-		padding-top: calc(var(--sp-y) * 1.5);
-		padding-bottom: calc(var(--sp-y) * 0.5);
+		padding-top: calc(var(--sp-y) * 1.6);
+		padding-bottom: calc(var(--sp-y) * 0.4);
 		&:required {
 			& ~ .form-wrap__input-title {
 				width: 100%;
@@ -71,7 +75,7 @@
 		&.form-select {
 			& ~ .form-wrap__input-title {
 				//  color: #846951;
-				transform: scale(0.8) translateY(var(--up-t, -70%));
+				transform: scale(0.8) translateY(var(--up-t, -65%));
 				color: #6a6a6a;
 				// &::after {
 				// 	transform: translateX(175px);
