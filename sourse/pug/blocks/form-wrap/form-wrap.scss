@@ -73,9 +73,9 @@
 				//  color: #846951;
 				transform: scale(0.8) translateY(var(--up-t, -70%));
 				color: #6a6a6a;
-				&::after {
-					transform: translateX(175px);
-				}
+				// &::after {
+				// 	transform: translateX(175px);
+				// }
 			}
 		}
 
