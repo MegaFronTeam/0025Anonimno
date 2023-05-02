@@ -463,6 +463,7 @@ function eventHandler() {
 	$('.commentsSidebar').hcSticky({
     stickTo: $('.sContent'),
 		top: 108,
+		bottom: 20,
   });
 };
 if (document.readyState !== 'loading') {
