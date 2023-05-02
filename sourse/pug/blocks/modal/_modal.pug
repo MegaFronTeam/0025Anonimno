@@ -58,5 +58,25 @@ mixin modal()
 					+e.agreement Отправляя отзыв вы&nbsp;автоматически соглашаетесь с&nbsp;условиями 
 						a(href="") Пользовательского соглашения
 	// #modal-review
-	
+
+	div(id="modal-register"  style="display: none" )
+		+b.modal-register
+			+e.head
+				+e.logo Anonimno
+			+e.content
+				h5 Регистрация
+				mixin regbtn(img, text)
+					+e.btn.btn.btn-light(href="#")
+						+img(`img/svg/${img}.svg`)
+						span!= text
+				+regbtn(`VK`, `Вконтакте`)
+				+regbtn(`message`, `Почта`)
+				+regbtn(`google`, `Google`)
+				+regbtn(`yandex`, `Yandex`)
+				+regbtn(`smile`, `Анонимно`)
+				
+				
+
+	// #modal-register
+
 	// end modals
