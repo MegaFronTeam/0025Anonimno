@@ -39,7 +39,7 @@ mixin search()
 				input(type="text" placeholder="Поиск")
 				+e.BUTTON.search 
 					+icon("search")
-				+e.BUTTON.close
+				+e.close
 					+icon("cross")
 
 mixin page-head(t,...items)
@@ -59,4 +59,17 @@ mixin sidebar()
 		a(href="#").h5 
 			| Комментарии
 			+icon('chevronRight')
-		
+		mixin item(i, text)
+			+e.item
+				+e.head
+					+e.avatar(style="--bgColor: #2ABD00"): +img(`img/avatar-${i}.jpg`)
+					div
+						+e.name &lt;Username&gt;
+						+e.date date/time
+				p!= text
+		+item(1, 'Цена порции не&nbsp;остановит студента? Сколько их&nbsp;там в&nbsp;стаканчике? 8&nbsp;штук? А&nbsp;в&nbsp;том&nbsp;же Ермолино можно на&nbsp;эти деньги килограмм купить.')
+		+item(3, 'Вот так всегда, не&nbsp;успели придумать, а&nbsp;китайцы уже украли идею и&nbsp;даже запустили производство. Видимо, секретные чертежи утекли))')
+		+item(2, 'Российские инноваторы&nbsp;&mdash; саммые инновационные. А&nbsp;потом, когда их&nbsp;посадят за&nbsp;нецелевые растраты госбабок, будут ныть на&nbsp;хабре, что инновации в&nbsp;РФ невозможны.')
+		+item(1, 'Я&nbsp;подумал, что автомат просто похожий, так это тупо 1&nbsp;в 1. Дамплинги это фактически и&nbsp;есть вариация пельменей.')
+		+item(3, 'Кроме лени, зачастую нет просто времени, вот и&nbsp;удобства подъехали, главное чтоб было качественно и&nbsp;вкусно.')
+		+e.btn.btn.btn-light(href='#') Все комментарии

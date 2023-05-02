@@ -446,7 +446,7 @@ function eventHandler() {
 		let seachBlockTarget = e.target.closest('.search-block__content');
 		let toggleTarget = e.target.closest('.search-block__toggle--js')
 		let toggle = document.querySelector('.search-block__toggle--js');
-		let deleteTextTarget = document.querySelector('.search-block__close');
+		let deleteTextTarget = e.target.closest('.search-block__close');
 		if(toggleTarget) {
 			toggle.nextElementSibling.classList.toggle('active');
 		} 
@@ -456,6 +456,7 @@ function eventHandler() {
 		if(deleteTextTarget) {
 			toggle.nextElementSibling.querySelector('input').value = '';
 			toggle.nextElementSibling.querySelector('input').focus();
+			console.log(deleteTextTarget);
 		}
 	});
 };
