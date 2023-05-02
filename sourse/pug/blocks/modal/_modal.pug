@@ -14,4 +14,40 @@ mixin modal()
 				+policy()
 	// #modal-call
 	
+	div(id="modal-review"  style="display: none" )
+		+b.modal-review
+			+form-wrap
+				+e.head
+					+e.title.form-data.h3 Новый отзыв
+				+e.content
+					.rating
+						.rating__title Ваша оценка
+						.rating__group
+							input#mood-1.rating__input(type='radio' name='mood' value='1')
+							label.rating__star(for='mood-1' aria-label='Ужасно')
+							input#mood-2.rating__input(type='radio' name='mood' value='2')
+							label.rating__star(for='mood-2' aria-label='Сносно')
+							input#mood-3.rating__input(type='radio' name='mood' value='3' checked='')
+							label.rating__star(for='mood-3' aria-label='Нормально')
+							input#mood-4.rating__input(type='radio' name='mood' value='4')
+							label.rating__star(for='mood-4' aria-label='Хорошо')
+							input#mood-5.rating__input(type='radio' name='mood' value='5')
+							label.rating__star(for='mood-5' aria-label='Отлично')
+							.rating__focus
+					+input("Ваше Имя")(required)
+					+input("Выбрать категорию", "select")
+					+input("Заголовок отзыва")(required)
+					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea")(required)
+					+add-file()
+					+e.switch.form-check.form-switch
+						input#flexSwitchCheck.form-check-input(type='checkbox' role='switch')
+						label.form-check-label(for='flexSwitchCheck') Указать плюсы и&nbsp;минусы
+					+input("Автор")(required)
+
+				+e.footer
+					+e.BUTTON.btn.btn(type="submit") Опубликовать
+					+e.agreement Отправляя отзыв вы&nbsp;автоматически соглашаетесь с&nbsp;условиями 
+						a(href="") Пользовательского соглашения
+	// #modal-review
+	
 	// end modals

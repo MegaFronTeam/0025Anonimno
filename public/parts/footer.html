@@ -36,4 +36,71 @@
 	</div>
 </div>
 <!-- #modal-call-->
+<div id="modal-review" style="display: none">
+	<div class="modal-review">
+		<div class="form-wrap">
+			<form>
+				<div class="form-wrap__head">
+					<div class="form-wrap__title form-data h3">Новый отзыв
+					</div>
+				</div>
+				<div class="form-wrap__content">
+					<div class="rating">
+						<div class="rating__title">Ваша оценка</div>
+						<div class="rating__group">
+							<input class="rating__input" id="mood-1" type="radio" name="mood" value="1"/>
+							<label class="rating__star" for="mood-1" aria-label="Ужасно"></label>
+							<input class="rating__input" id="mood-2" type="radio" name="mood" value="2"/>
+							<label class="rating__star" for="mood-2" aria-label="Сносно"></label>
+							<input class="rating__input" id="mood-3" type="radio" name="mood" value="3" checked=""/>
+							<label class="rating__star" for="mood-3" aria-label="Нормально"></label>
+							<input class="rating__input" id="mood-4" type="radio" name="mood" value="4"/>
+							<label class="rating__star" for="mood-4" aria-label="Хорошо"></label>
+							<input class="rating__input" id="mood-5" type="radio" name="mood" value="5"/>
+							<label class="rating__star" for="mood-5" aria-label="Отлично"></label>
+							<div class="rating__focus"></div>
+						</div>
+					</div>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя" required="required"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<select class="form-wrap__input form-select" name="select">
+							<option value="Выбрать категорию">Выбрать категорию</option>
+							<option value=" placeholder 1">placeholder 1</option>
+							<option value=" placeholder 2">placeholder 2</option>
+							<option value=" placeholder 3">placeholder 3</option>
+							<option value=" placeholder 4">placeholder 4</option>
+						</select>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Заголовок отзыва" required="required"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" name="textarea" placeholder="Здесь ваш отзыв (не менее 100 символов)"></textarea>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="add-file">
+						<label><input class="add-file__input" name="file" type="file"/><span class="add-file__btn"> </span><span class="add-file__text">  Прикрепить резюме</span>
+						</label><span class="add-file__filename"> </span>
+					</div>
+					<div class="form-wrap__switch form-check form-switch">
+						<input class="form-check-input" id="flexSwitchCheck" type="checkbox" role="switch"/>
+						<label class="form-check-label" for="flexSwitchCheck">Указать плюсы и&nbsp;минусы</label>
+					</div>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Автор" required="required"/>
+					</div>
+					<!-- +e.input-wrap-->
+				</div>
+				<div class="form-wrap__footer">
+					<button class="form-wrap__btn btn" type="submit">Опубликовать
+					</button>
+					<div class="form-wrap__agreement">Отправляя отзыв вы&nbsp;автоматически соглашаетесь с&nbsp;условиями <a href="">Пользовательского соглашения</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- #modal-review-->
 <!-- end modals-->

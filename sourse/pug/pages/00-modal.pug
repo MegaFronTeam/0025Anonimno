@@ -18,9 +18,10 @@ block pagecontent
 		.section.container
 			h1 Страница для  демонстрации модальных окон
 			.row
-				mixin btn(id, name)
+				mixin btn(id, name, x)
 					.col-auto.mb-2
-						a.btn.btn-primary(href=`#` data-src=id data-fancybox="modal")= name
-				+btn("#modal-call", "modal-call")
+						a.btn.btn-primary(href=`#` data-src=id data-fancybox=`modal-${x}`)= name
+				//- +btn("#modal-call", "modal-call", 1)
+				+btn("#modal-review", "Отзыв", 2)
 
 	+parts('footer')
