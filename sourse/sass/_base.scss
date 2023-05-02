@@ -590,7 +590,8 @@ iframe {
 }
 
 .main-page-2 {
-	.sContent__wrap {
+	.sContent__wrap,
+	.sComments__wrap {
 		@include media-breakpoint-up(lg) {
 			max-width: calc(100% - rem(360));
 		}
