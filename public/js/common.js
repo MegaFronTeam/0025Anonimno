@@ -459,6 +459,11 @@ function eventHandler() {
 			console.log(deleteTextTarget);
 		}
 	});
+
+	$('.commentsSidebar').hcSticky({
+    stickTo: $('.sContent'),
+		top: 108,
+  });
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
