@@ -1,10 +1,13 @@
 
 // start .sContent
 .sContent {
-	--sPT: #{rem(24)};
+	--sPT: #{rem(16)};
 	--sPB: 0;
 	// --sPB: #{rem(24)};
 	// --sTPB: #{rem()};
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(24)};
+	}
 	position: relative;
 	// @include media-breakpoint-up(xl) {
 	// 	--sPB: #{rem(48)};
@@ -42,7 +45,10 @@
 		}
 	}
 	h1 {
-		margin: rem(24) 0;
+		margin: rem(16) 0;
+		@include media-breakpoint-up(lg) {
+			margin: rem(24) 0;
+		}
 	}
 	h2 {
 		font-size: rem(32);

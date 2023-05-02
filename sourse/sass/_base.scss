@@ -593,10 +593,31 @@ iframe {
 	.sContent__wrap,
 	.sComments__wrap {
 		@include media-breakpoint-up(lg) {
-			max-width: calc(100% - rem(360));
+			// max-width: calc(100% - rem(360));
+			margin-right: rem(360);
+			max-width: rem(760);
 		}
 		@include media-breakpoint-up(xl) {
-			max-width: calc(100% - rem(400));
+			margin-right: rem(400);
+		}
+	}
+	.sContent__container,
+	.container-img {
+		@media (max-width: 1900px) {
+			max-width: 100%;
+		}
+	}
+	.sContent__wrap {
+		@media (max-width: 1900px) {
+			margin-left: 0;
+		}
+	}
+	.sContent .img {
+		@include media-breakpoint-between(lg, xxl) {
+			width: 100%;
+		}
+		@include media-breakpoint-up(xl) {
+			max-width: rem(958.594);
 		}
 	}
 }
