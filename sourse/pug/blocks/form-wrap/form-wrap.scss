@@ -61,6 +61,20 @@
 				color: #6a6a6a;
 			}
 		}
+		&:required {
+			& ~ .form-wrap__input-title {
+				width: 100%;
+				max-width: calc(100% - #{$input-padding-x} * 2);
+				&::after {
+					content: "*";
+					@include a-cent(y);
+					position: absolute;
+					right: 0;
+					color: #EE3D32;
+
+				}
+			}
+		}
 		// &:focus {
 		// 	outline: 1px solid $primary !important;
 		// }
@@ -72,6 +86,11 @@
 			background-size: rem(24);
 			& ~ .form-wrap__input-title {
 				left: calc($input-padding-x + rem(40));
+			}
+			&:required {
+				& ~ .form-wrap__input-title {
+					max-width: calc(100% - #{$input-padding-x} * 2 - #{rem(40)});
+				}
 			}
 		}
 		&.form-select {
