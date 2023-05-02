@@ -3,6 +3,7 @@
 	--sPT: #{rem(32)};
 	--sPB: #{rem(56)};
 	// --sTPB: #{rem()};
+	font-size: rem(16);
 	line-height: calc(28 / 16);
 	color: $secondary;
 	&__row {
