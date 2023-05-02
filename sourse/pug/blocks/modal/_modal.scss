@@ -106,11 +106,14 @@ a {
 	background: $white;
 	max-width: 100%;
 	position: relative;
-	width: rem(1272);
+	width: rem(850);
 	box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
 	border-radius: $border-radius;
 	// padding: rem(32);
 	.form-wrap {
+		textarea {
+			min-height: rem(128);
+		}
 		&__input-wrap {
 			margin-bottom: var(--spacing);
 			&:last-child {
@@ -130,6 +133,10 @@ a {
 		&__footer {
 			padding: var(--spacing);
 			border-top: 1px solid #e8e8e8;
+			.row {
+				--bs-gutter-x: #{rem(16)};
+				margin-bottom: rem(16);
+			}
 		}
 		&__agreement {
 			text-align: center;
@@ -159,11 +166,26 @@ a {
 					background-position: calc(100% - 2px);
 					background-color: $primary;
 				}
-				&:active {
-					filter: brightness(98%);
-				}
 			}
-			.form-check-label {
+		}
+		&__plusMinus {
+			margin-bottom: var(--spacing);
+			textarea {
+				min-height: rem(68);
+			}
+		}
+		&__notice {
+			.custom-input {
+				margin-bottom: 0;
+			}
+		}
+		&__btn {
+			width: 100%;
+			--bs-btn-font-size: #{rem(16)};
+			--bs-btn-line-height: calc(32 / 16);
+			--bs-btn-padding-y: #{rem(8)};
+			@include media-breakpoint-up(sm) {
+				--bs-btn-padding-y: #{rem(11)};
 			}
 		}
 	}

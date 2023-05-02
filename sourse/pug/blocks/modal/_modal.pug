@@ -34,18 +34,27 @@ mixin modal()
 							input#mood-5.rating__input(type='radio' name='mood' value='5')
 							label.rating__star(for='mood-5' aria-label='Отлично')
 							.rating__focus
-					+input("Ваше Имя")(required)
-					+input("Выбрать категорию", "select")
-					+input("Заголовок отзыва")(required)
+					+input("О чем ваш отзыв?")(required style="--bgImg: url(../img/svg/star-outline.svg);").with-icon
+					+input("Выбрать категорию", "select")(style="--bgImg: url(../img/svg/catalog.svg);").with-icon
+					+input("Заголовок отзыва")(required style="--bgImg: url(../img/svg/edit.svg);").with-icon
 					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea")(required)
 					+add-file()
-					+e.switch.form-check.form-switch
-						input#flexSwitchCheck.form-check-input(type='checkbox' role='switch')
-						label.form-check-label(for='flexSwitchCheck') Указать плюсы и&nbsp;минусы
-					+input("Автор")(required)
+					+e.plusMinus
+						+e.switch.form-check.form-switch
+							input#flexSwitchCheck.form-check-input(type='checkbox' role='switch')
+							label.form-check-label(for='flexSwitchCheck') Указать плюсы и&nbsp;минусы
+						+input("Плюсы", "textarea")(required)
+						+input("Минусы", "textarea")(required)
+					+input("Автор")(required style="--bgImg: url(../img/svg/user.svg);").with-icon
+					+e.notice
+						+in-c('checkbox', `Получать уведомления о новых отзывах на электронную почту`)(checked)
 
 				+e.footer
-					+e.BUTTON.btn.btn(type="submit") Опубликовать
+					.row
+						.col
+							+e.BUTTON.btn.btn.btn-light Отменить
+						.col
+							+e.BUTTON.btn.btn.btn-primary(type="submit") Опубликовать
 					+e.agreement Отправляя отзыв вы&nbsp;автоматически соглашаетесь с&nbsp;условиями 
 						a(href="") Пользовательского соглашения
 	// #modal-review
