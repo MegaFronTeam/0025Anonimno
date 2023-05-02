@@ -38,7 +38,7 @@ mixin modal()
 					+input("Выбрать категорию", "select")(style="--bgImg: url(../img/svg/catalog.svg);").with-icon
 					+input("Заголовок отзыва")(required style="--bgImg: url(../img/svg/edit.svg);").with-icon
 					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea")(required)
-					+add-file()
+					input(type="file" multiple ).filepond
 					+e.plusMinus
 						+e.switch.form-check.form-switch
 							input#flexSwitchCheck.form-check-input(type='checkbox' role='switch')
