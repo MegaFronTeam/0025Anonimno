@@ -488,7 +488,31 @@ function eventHandler() {
 				`
 			});
 		}
+		if(modalTarget) {
+			let frameworks = [
+				{id: 'img/svg/select-icon-1.svg', text: 'Промокоды'},
+				{id: 'img/svg/select-icon-2.svg', text: 'Еда и продукты'},
+				{id: 'img/svg/select-icon-3.svg', text: 'Одежда и обувь'},
+				{id: 'img/svg/select-icon-4.svg', text: 'Электроника'},
+			];
+			$('.custom-select--js').select2({
+				placeholder: `<img src="img/svg/select-icon-5.svg"> Выбрать категорию`,
+				minimumResultsForSearch: -1,
+				data: frameworks,
+				templateResult: format,
+				templateSelection: format,
+				escapeMarkup: function(m) {
+					return m;
+				},
+			}).val(null).trigger("change");
+
+			function format(state) {
+				if (!state.id) return state.text; // optgroup
+				return '<img src="' + state.id + '"/>' + state.text;
+			}
+		}
 	})
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

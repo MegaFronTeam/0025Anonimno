@@ -323,9 +323,12 @@
 
 .filepond {
 	position: relative;
-	margin-bottom: rem(50);
+	margin-bottom: rem(24);
 	border-radius: 4px;
 	background-color: $gray-100;
+	@include media-breakpoint-up(lg) {
+		margin-bottom: rem(50);
+	}
 	cursor: pointer;
 	// border: 1px dashed #BDC3C6;
 	&:after {
@@ -408,18 +411,24 @@
 		}
 		.h5 {
 			font-family: $default-font;
-			font-size: rem(18);
+			font-size: rem(16);
 			font-weight: 500;
 			color: $gray-600;
 			line-height: 1.56;
 			margin-bottom: rem(4);
+			@include media-breakpoint-up(lg) {
+				font-size: rem(18);
+			}
 		}
 		p {
 			font-family: $default-font;
 			margin-bottom: 0;
-			font-size: rem(18);
+			font-size: rem(14);
 			line-height: 1.56;
 			color: #6A6A6A;
+			@include media-breakpoint-up(lg) {
+				font-size: rem(18);
+			}
 			span {
 				color: #0091E2;
 			}

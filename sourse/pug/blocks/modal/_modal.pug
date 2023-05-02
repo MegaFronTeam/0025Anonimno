@@ -35,7 +35,11 @@ mixin modal()
 							label.rating__star(for='mood-5' aria-label='Отлично')
 							.rating__focus
 					+input("О чем ваш отзыв?")(required style="--bgImg: url(../img/svg/star-outline.svg);").with-icon
-					+input("Выбрать категорию", "select")(style="--bgImg: url(../img/svg/catalog.svg);").with-icon
+					//- +input("Выбрать категорию", "select")(style="--bgImg: url(../img/svg/catalog.svg);").with-icon
+					.form-wrap__input-wrap
+						span
+						select.custom-select.custom-select--js(name="category") 
+							option
 					+input("Заголовок отзыва")(required style="--bgImg: url(../img/svg/edit.svg);").with-icon
 					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea")(required)
 					input(type="file" multiple ).filepond
