@@ -326,6 +326,7 @@
 	margin-bottom: rem(50);
 	border-radius: 4px;
 	background-color: $gray-100;
+	cursor: pointer;
 	// border: 1px dashed #BDC3C6;
 	&:after {
 		content: '';
@@ -397,7 +398,11 @@
 		}
 	}
 	.filepond--drop-label {
+		cursor: pointer;
 		min-height: rem(175.500);
+		label {
+			cursor: pointer;
+		}
 		svg {
 			margin-bottom: rem(8);
 		}
