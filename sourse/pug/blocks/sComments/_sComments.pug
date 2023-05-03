@@ -1,22 +1,30 @@
-mixin sComments(data)
+mixin sComments(second)
 	// start sComments
 	+b.sComments.section#sComments&attributes(attributes)
 		//- +e.container.container-fluid.container-lg
 		+e.wrap
-			+e.head-row.row
+			if !second
+				+e.head-row.row
+					.col
+						+e.btn(href='#')
+							+icon('comments')
+							| 180
+					.col-auto
+						+e.likes
+							+e.btn(href='#')
+								+icon('like')
+								| 24
+							+e.btn(href='#')
+								+icon('dislike')
+								| 4
+			+e.inner-row.row
 				.col
-					+e.btn(href='#')
-						+icon('comments')
-						| 180
-				.col-auto
-					+e.likes
-						+e.btn(href='#')
-							+icon('like')
-							| 24
-						+e.btn(href='#')
-							+icon('dislike')
-							| 4
-			h3 Комментарии
+					h3 Комментарии
+						if second
+							sup 27
+				if second
+					.col-auto
+						+e.set-comm.btn.btn-primary(href='#') Оставить комментарий
 			+e.comments
 				+e.comment
 					+e.avatar(style="--bgColor: #FFCC00"): +img('img/avatar-1.jpg')
@@ -59,10 +67,11 @@ mixin sComments(data)
 										+icon('dislike')
 										| 4
 			+e.show-more.btn.btn-light(href='#') Ещё 30 комментариев из 180
-			+e.chat
-				+e.avatar(style="--bgColor: #FFCC00"): +img('img/avatar-1.jpg')
-				+e.form-wrap
-					form
-						input(type="text" placeholder='Placeholder')
-						button(type="submit"): +icon('arrow-right')
+			if !second
+				+e.chat
+					+e.avatar(style="--bgColor: #FFCC00"): +img('img/avatar-1.jpg')
+					+e.form-wrap
+						form
+							input(type="text" placeholder='Placeholder')
+							button(type="submit"): +icon('arrow-right')
 	// end sComments

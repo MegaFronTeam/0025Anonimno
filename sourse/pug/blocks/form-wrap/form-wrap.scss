@@ -60,12 +60,15 @@
 		}
 		&:required {
 			& ~ .form-wrap__required-star {
-				top: rem(21.600);
+				top: rem(12);
 				right: rem(24);
 				@include mt;
 				position: absolute;
 				color: #ee3d32;
 				display: block;
+				@include media-breakpoint-up(md) {
+					top: rem(21.600);
+				}
 			}
 		}
 		&:-webkit-autofill,

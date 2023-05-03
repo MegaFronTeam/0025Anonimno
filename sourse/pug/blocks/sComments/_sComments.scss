@@ -256,6 +256,19 @@
 			}
 		}
 	}
+	&__inner-row {
+		--bs-gutter-y: #{rem(12)};
+
+		align-items: center;
+	}
+	&__set-comm {
+		--bs-btn-padding-x: #{rem(16)};
+    --bs-btn-padding-y: #{rem(9)};
+		--bs-btn-font-size: #{rem(16)};
+		@include media-breakpoint-up(xl) {
+			--bs-btn-font-size: #{rem(16)};
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

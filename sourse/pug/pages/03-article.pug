@@ -1,0 +1,81 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sNews/_sNews.pug
+include ../blocks/sComments/_sComments.pug
+
+block variables
+	- let  mainPage= 'article-page' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= 'Article'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header2')
+	main
+		+sContent()
+			.row
+				.col-lg-1
+					+e.socials-wrap
+						+e.back(href='#'): +icon('arrow-left')
+						+soc
+				.col-lg-7
+					h1 ТОП-8 лучших сайтов для покупки авиабилетов — Рейтинг 2023 года
+					+e.name
+						+img('img/avatar-4.jpg')
+						| Сергей  Триколенов
+					+e.span-row.row
+						.col-auto
+							+e.starts
+								+img('img/svg/star-on.svg')
+								+img('img/svg/star-on.svg')
+								+img('img/svg/star-on.svg')
+								+img('img/svg/star-on.svg')
+								+img('img/svg/star-off.svg')
+						.col-auto
+							span 13 апреля 2022
+						.col-auto
+							+icon('eye')
+							span 47 387
+						.col-auto
+							+icon('comments')
+							span 180
+					+e.block
+						p Когда нужно совершить перелет из&nbsp;одного города в&nbsp;другой, встает вопрос, где лучше купить недорогие авиабилеты на&nbsp;самолет. В&nbsp;дополнение к&nbsp;возможности бронирования билетов напрямую у&nbsp;авиакомпаний, есть десятки сайтов для покупки авиабилетов у&nbsp;онлайн турагентств. Они не&nbsp;гарантируют лучшую стоимость рейса, но&nbsp;часто предлагают выгодные скидки.
+					+e.slider--js.swiper
+						.swiper-wrapper
+							+e.slide.swiper-slide
+								+e.img-wrap
+									+img('img/sContent-img-3.png', 'bg')
+							+e.slide.swiper-slide
+								+e.img-wrap
+									+img('img/sContent-img-3.png', 'bg')
+							+e.slide.swiper-slide
+								+e.img-wrap
+									+img('img/sContent-img-3.png', 'bg')
+						.swiper-pagination
+					+e.block
+						p Есть много факторов, которые влияют на&nbsp;цену билета: дата, время вылета, авиакомпания и&nbsp;класс (бизнес или эконом). Если у&nbsp;вас ограниченный бюджет или ищите онлайн билет на&nbsp;самолет в&nbsp;последние минуты&nbsp;&mdash; это не&nbsp;повод переживать. Хорошие сайты агрегаторы подберут недорогую авиакомпанию с&nbsp;полетами в&nbsp;Европу, Азию и&nbsp;Соединенные Штаты Америки.
+						p Для удобства использования сервиса есть мобильные приложения на&nbsp;смартфоны на&nbsp;Android и&nbsp;iOS. В&nbsp;них установлено онлайн табло всех рейсов, полезные советы как собрать багаж, как пройти регистрацию в&nbsp;аэропорту и&nbsp;что делать если рейс задерживают. Воспользуйтесь рейтингом лучших сайтов по&nbsp;продаже авиабилетов, чтобы сэкономить деньги на&nbsp;перелетах в&nbsp;2023&nbsp;году.
+					+e.block
+						h6 Плюсы использования скидок
+						p Есть много факторов, которые влияют на&nbsp;цену билета: дата, время вылета, авиакомпания и&nbsp;класс (бизнес или эконом). Если у&nbsp;вас ограниченный бюджет или ищите онлайн билет на&nbsp;самолет в&nbsp;последние минуты&nbsp;&mdash; это не&nbsp;повод переживать. Хорошие сайты агрегаторы подберут недорогую авиакомпанию с&nbsp;полетами в&nbsp;Европу, Азию и&nbsp;Соединенные Штаты Америки.
+					+e.block
+						h6 Ну и конечно же минусы
+						p Для удобства использования сервиса есть мобильные приложения на&nbsp;смартфоны на&nbsp;Android и&nbsp;iOS. В&nbsp;них установлено онлайн табло всех рейсов, полезные советы как собрать багаж, как пройти регистрацию в&nbsp;аэропорту и&nbsp;что делать если рейс задерживают. Воспользуйтесь рейтингом лучших сайтов по&nbsp;продаже авиабилетов, чтобы сэкономить деньги на&nbsp;перелетах в&nbsp;2023&nbsp;году.
+					+sComments(true)
+				.col-3.ms-auto
+					+sidebar
+	+parts('footer')
+      
+
+
+

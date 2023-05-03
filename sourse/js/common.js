@@ -439,6 +439,20 @@ function eventHandler() {
 
 	});
 
+	const sContentswiper = new Swiper('.sContent__slider--js', {
+		slidesPerView: 'auto',
+		spaceBetween: 16,
+		freeMode: true,
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+			// renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+		},
+	});
+
 	// modal window
 
 	document.addEventListener('click', function(e) {
