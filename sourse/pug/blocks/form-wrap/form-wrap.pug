@@ -24,9 +24,11 @@ mixin input(placeholder,  t='text', label= placeholder, name= t)
 			label
 				+t(t,placeholder, name)&attributes(attributes)
 				+e.SPAN.input-title= label
+				+e.SPAN.required-star *
 		else
 			+t(t,placeholder, name)&attributes(attributes)
 			+e.SPAN.input-title= label
+			+e.SPAN.required-star *
 		block
 	// +e.input-wrap
 mixin select(label,pl,...items)
