@@ -1,21 +1,21 @@
 "use strict";
 const JSCCommon = { 
 	modalCall() {
-		const link = '[data-fancybox="modal"], .link-modal-js';
+		const link = '.btn-modal-js';
 		Fancybox.bind(link, {
 			arrows: false,
-			// infobar: false,
+			// // infobar: false,
 			touch: false,
 			trapFocus: false,
 			placeFocusBack: false,
 			infinite: false,
+			type: 'html',
 			dragToClose: false,
-			type: 'inline',
 			autoFocus: false,
 			groupAll: false,
 			groupAttr: false,
-			// showClass: "fancybox-throwOutUp",
-			// hideClass: "fancybox-throwOutDown",
+			showClass: "fancybox-throwOutUp",
+			hideClass: "fancybox-throwOutDown",
 			l10n: {
 				CLOSE: "Закрыть",
 				Escape: "Закрыть",
@@ -35,9 +35,9 @@ const JSCCommon = {
 				Fancybox.close();
 			})
 		})
-		Fancybox.bind('[data-fancybox]', {
-			placeFocusBack: false,
-		});
+		// Fancybox.bind('[data-fancybox]', {
+		// 	placeFocusBack: false,
+		// });
 		document.addEventListener('click', (event) => {
 			let element = event.target.closest(link)
 			if(!element) return;
@@ -353,8 +353,8 @@ const JSCCommon = {
 };
 const $ = jQuery;
 
+JSCCommon.modalCall();
 function eventHandler() { 
-	JSCCommon.modalCall();
 	// JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
@@ -366,12 +366,12 @@ function eventHandler() {
 	// JSCCommon.animateScroll();
 	
 	// JSCCommon.CustomInputFile(); 
-	var x = window.location.host;
-	let screenName;
-	screenName = 'screen/'+document.body.dataset.bg;
-	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(${screenName});"></div>`);
-	}
+	// var x = window.location.host;
+	// let screenName;
+	// screenName = 'screen/'+document.body.dataset.bg;
+	// if (screenName && x.includes("localhost:30")) {
+	// 	document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(${screenName});"></div>`);
+	// }
 
 
 	function setFixedNav() {
