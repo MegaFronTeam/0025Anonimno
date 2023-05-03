@@ -361,7 +361,7 @@
 	}
 	&--item {
 		@include block(1,1);
-		width: calc((100% / 1) - 0.5em);
+		width: calc((100% / 2) - 0.5em);
 		height: auto !important;
 		// transform: none !important;
 		// border: 2px dashed #BDC3C6;
@@ -382,10 +382,10 @@
 			z-index: 10;
 		}
 		@include media-breakpoint-up(sm) {
-			width: calc((100% / 2) - 0.5em);
+			width: calc((100% / 3) - 0.5em);
 		}
 		@include media-breakpoint-up(md) {
-			width: calc((100% / 3) - 0.5em);
+			width: calc((100% / 4) - 0.5em);
 		}
 		@include media-breakpoint-up(lg) {
 			width: calc((100% / 5) - 0.5em);
