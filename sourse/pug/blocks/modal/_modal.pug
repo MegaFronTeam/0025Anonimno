@@ -38,8 +38,15 @@ mixin modal()
 					//- +input("Выбрать категорию", "select")(style="--bgImg: url(../img/svg/catalog.svg);").with-icon
 					.form-wrap__input-wrap
 						span
-						select.custom-select.custom-select--js(name="category") 
-							option
+						select.custom-select.custom-select--js(name="category" data-placeholder=`<img src="img/svg/select-icon-5.svg"> Выбрать категорию`) 
+							option(data-img='img/svg/select-icon-1.svg' value='Промокоды') Промокоды
+							option(data-img='img/svg/select-icon-2.svg' value='Еда и продукты') Еда и продукты
+							option(data-img='img/svg/select-icon-3.svg' value='Одежда и обувь') Одежда и обувь
+							option(data-img='img/svg/select-icon-4.svg' value='Электроника') Электроника
+							option(data-img='img/svg/select-icon-1.svg' value='Промокоды') Промокоды
+							option(data-img='img/svg/select-icon-2.svg' value='Еда и продукты') Еда и продукты
+							option(data-img='img/svg/select-icon-3.svg' value='Одежда и обувь') Одежда и обувь
+							option(data-img='img/svg/select-icon-4.svg' value='Электроника') Электроника
 					+input("Заголовок отзыва")(required style="--bgImg: url(../img/svg/edit.svg);").with-icon
 					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea")(required)
 					input(type="file" multiple ).filepond
