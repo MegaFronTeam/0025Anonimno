@@ -2,7 +2,6 @@
 const JSCCommon = { 
 	modalCall() {
 		const link = '[data-fancybox="modal"], .link-modal-js';
-
 		Fancybox.bind(link, {
 			arrows: false,
 			// infobar: false,

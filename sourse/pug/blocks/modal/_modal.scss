@@ -157,7 +157,7 @@ a {
 			line-height: calc(20 / 14);
 		}
 		&__switch {
-			display: flex;
+			display: inline-flex;
 			align-items: center;
 			padding-left: 0;
 			line-height: calc(28 / 18);

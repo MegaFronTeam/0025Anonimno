@@ -49,7 +49,7 @@ mixin modal()
 							option(data-img='img/svg/select-icon-4.svg' value='Электроника') Электроника
 					+input("Заголовок отзыва")(required style="--bgImg: url(../img/svg/edit.svg);").with-icon
 					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea")(required)
-					input(type="file" multiple ).filepond
+					input(type="file" multiple data-allow-reorder="true").filepond
 					+e.plusMinus
 						+e.switch.form-check.form-switch
 							input#flexSwitchCheck.form-check-input(type='checkbox' role='switch')

@@ -363,10 +363,24 @@
 		@include block(1,1);
 		width: calc((100% / 1) - 0.5em);
 		height: auto !important;
-		transform: none !important;
-		border: 2px dashed #BDC3C6;
+		// transform: none !important;
+		// border: 2px dashed #BDC3C6;
 		border-radius: 8px;
 		overflow: hidden;
+		position: absolute;
+		&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			border: 2px dashed #BDC3C6;
+			border-radius: 8px;
+			pointer-events: none;
+			z-index: 10;
+		}
 		@include media-breakpoint-up(sm) {
 			width: calc((100% / 2) - 0.5em);
 		}

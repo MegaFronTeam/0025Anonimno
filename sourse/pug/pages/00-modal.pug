@@ -18,11 +18,11 @@ block pagecontent
 		.section.container
 			h1 Страница для  демонстрации модальных окон
 			.row
-				mixin btn(id, name, x)
+				mixin btn(id, name)
 					.col-auto.mb-2
-						a.btn.btn-primary(href=`#` data-src=id data-fancybox=`modal-${x}`)= name
+						button.btn.btn-primary(type='button' data-src=id data-fancybox)= name
 				//- +btn("#modal-call", "modal-call", 1)
-				+btn("#modal-register", "Регистрация", 1)
-				+btn("#modal-review", "Отзыв", 2)
+				+btn("#modal-register", "Регистрация")
+				+btn("#modal-review", "Отзыв")
 
 	+parts('footer')

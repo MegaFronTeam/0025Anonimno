@@ -18,7 +18,7 @@ mixin mob-mnu()
 			+e.wrap
 				+menu-toggle()
 				+e.logo.d-lg-none(href='/') ANONIMNO
-			+e.btn.btn.btn-sm.btn-primary.d-md-none(href='#' data-src='#modal-review' data-fancybox='modal-1') Оставить отзыв
+			//- +e.btn.btn.btn-sm.btn-primary.d-md-none(href='#' data-src='#modal-review' data-fancybox='modal') Оставить отзыв
 			+mnu()
 	//  мобильное меню
 mixin top-nav() 
@@ -33,7 +33,7 @@ mixin top-nav()
 				.col
 					+search()
 				.col-auto.d-none.d-md-block
-					+e.btn.btn.btn-sm.btn-primary(href='#' data-src='#modal-review' data-fancybox='modal-2') Оставить отзыв
+					+e.btn.btn.btn-sm.btn-primary(href='#' data-src='#modal-review' data-fancybox="modal") Оставить отзыв
 				//- .col-auto.p-0.m-0
 				//- 	.menu-mobile.menu-mobile--js
 				//- 		.menu-mobile__inner
