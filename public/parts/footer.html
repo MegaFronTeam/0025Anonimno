@@ -764,30 +764,30 @@
 				</div>
 				<div class="form-wrap__content">
 					<div class="form-wrap__avatar-row row">
-						<div class="col">
-							<div class="form-wrap__input-wrap form-group">
-								<label><input class="form-wrap__input form-control" name="" type="text" placeholder=""/><span class="form-wrap__input-title">Ваше имя</span><span class="form-wrap__required-star">*</span>
-								</label>
-								<p>Hint</p>
-							</div>
-							<!-- +e.input-wrap-->
-						</div>
-						<div class="col">
+						<div class="col-auto order-sm-last">
 							<div class="form-wrap__item">
 								<div class="form-wrap__wrap">
 									<div class="form-wrap__btn-delete">
-										<svg class="icon icon-delete ">
-											<use xlink:href="img/svg/sprite.svg#delete"></use>
+										<svg class="icon icon-camera ">
+											<use xlink:href="img/svg/sprite.svg#camera"></use>
 										</svg>
 									</div>
 									<div class="form-wrap__block">
 										<input type="file" name="file1"/><img class="img-bg" src="#" alt=""/>
 										<svg class="icon icon-camera ">
 											<use xlink:href="img/svg/sprite.svg#camera"></use>
-										</svg><span>Загрузить фото</span>
+										</svg>
 									</div>
 								</div>
 							</div>
+						</div>
+						<div class="col-sm">
+							<div class="form-wrap__input-wrap form-group">
+								<label><input class="form-wrap__input form-control" name="" type="text" placeholder=""/><span class="form-wrap__input-title">Ваше имя</span><span class="form-wrap__required-star">*</span>
+								</label>
+								<p>Hint</p>
+							</div>
+							<!-- +e.input-wrap-->
 						</div>
 					</div>
 					<div class="form-wrap__input-wrap form-group">
@@ -797,11 +797,23 @@
 					</div>
 					<!-- +e.input-wrap-->
 					<div class="form-wrap__input-wrap form-group">
-						<label><input class="form-wrap__input form-control" name="email" type="email" placeholder="Электронная почта"/><span class="form-wrap__input-title">Электронная почта</span><span class="form-wrap__required-star">*</span>
+						<label><input class="form-wrap__input form-control" name="email" type="email" placeholder=""/><span class="form-wrap__input-title">Электронная почта</span><span class="form-wrap__required-star">*</span>
 						</label>
 						<p>Hint</p>
 					</div>
 					<!-- +e.input-wrap-->
+					<div class="form-wrap__announcements">
+						<div class="form-wrap__input-title">Получать уведомления на электронную почту:
+						</div>
+						<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><span class="custom-input__text form-check-label">Новые отзывы</span>
+						</label>
+						<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><span class="custom-input__text form-check-label">Ответы на ваши комментарии</span>
+						</label>
+						<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">Лайки комментариев</span>
+						</label>
+						<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">Дизлайки комментариев</span>
+						</label>
+					</div>
 				</div>
 				<div class="form-wrap__footer">
 					<div class="row">

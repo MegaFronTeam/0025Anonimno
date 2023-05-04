@@ -249,25 +249,27 @@ mixin modal()
 					+e.title.form-data.h3 Редактирование
 				+e.content
 					+e.avatar-row.row
-						.col
-							+input("", "", "Ваше имя")
-								p Hint
-						.col
+						.col-auto.order-sm-last
 							+e.item
 								+e.wrap
-									+e.btn-delete: +icon('delete')
+									+e.btn-delete: +icon('camera')
 									+e.block
 										input(type="file" name="file1")
 										img(class="img-bg" src="#" alt="")
 										+icon('camera')
-										span Загрузить фото
-							//- input.avatarFile(type='file' name='filepond' accept='image/png, image/jpeg, image/gif')
-
+						.col-sm
+							+input("", "", "Ваше имя")
+								p Hint
 					+input("", "tel", "Телефон")
 						p Hint
-					+input("Электронная почта", "email")
+					+input("", "email", "Электронная почта")
 						p Hint
-
+					+e.announcements
+						+e.input-title Получать уведомления на электронную почту:
+						+in-c('checkbox', `Новые отзывы`)(checked)
+						+in-c('checkbox', `Ответы на ваши комментарии`)(checked)
+						+in-c('checkbox', `Лайки комментариев`)
+						+in-c('checkbox', `Дизлайки комментариев`)
 				+e.footer
 					.row
 						.col-auto.ms-auto
