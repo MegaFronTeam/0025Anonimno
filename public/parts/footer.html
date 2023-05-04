@@ -228,7 +228,7 @@
 		</div>
 	</div>
 </div>
-<!-- #modal-review-->
+<!-- #modal-review-2-->
 <div id="modal-register" style="display: none">
 	<div class="modal-register">
 		<div class="modal-register__head">
@@ -329,7 +329,7 @@
 		</div>
 	</div>
 </div>
-<!-- #modal-review-->
+<!-- #modal-notifications-->
 <div id="modal-my-reviews" style="display: none">
 	<div class="modal-review modal-review--2">
 		<div class="modal-sidebar">
@@ -700,7 +700,7 @@
 		</div>
 	</div>
 </div>
-<!-- #modal-review-->
+<!-- #modal-comments-->
 <div id="modal-favorites" style="display: none">
 	<div class="modal-review modal-review--2">
 		<div class="modal-sidebar">
@@ -733,5 +733,128 @@
 		</div>
 	</div>
 </div>
-<!-- #modal-review-->
+<!-- #modal-favorites-->
+<div id="modal-editing" style="display: none">
+	<div class="modal-review modal-review--2">
+		<div class="modal-sidebar">
+			<a class="modal-sidebar__profile" href="#"><img src="img/avatar-12.jpg" alt="" loading="lazy"/>
+				<div>
+					<p>Александр</p><span>Редактировать</span>
+				</div>
+			</a>
+			<ul>
+				<li><a class="active" href="#">Мои отзывы  </a></li>
+				<li><a href="#">Комментарии</a></li>
+				<li><a href="#">Избранное</a></li>
+				<li><a href="#">Уведомления</a></li>
+			</ul>
+			<a class="modal-sidebar__support" href="#">Поддержка
+			</a>
+			<a class="modal-sidebar__log-out" href="#">
+				<svg class="icon icon-log-out ">
+					<use xlink:href="img/svg/sprite.svg#log-out"></use>
+				</svg>Выйти
+			</a>
+		</div>
+		<div class="form-wrap">
+			<form>
+				<div class="form-wrap__head">
+					<a class="form-wrap__title form-data h3" href="#"> 
+						<svg class="icon icon-arrow-left ">
+							<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
+						</svg>Добавление отзыва
+					</a>
+				</div>
+				<div class="form-wrap__content">
+					<div class="rating">
+						<div class="rating__title">Ваша оценка</div>
+						<div class="rating__group">
+							<input class="rating__input" id="mood-1" type="radio" name="mood" value="1"/>
+							<label class="rating__star" for="mood-1" aria-label="Ужасно"></label>
+							<input class="rating__input" id="mood-2" type="radio" name="mood" value="2"/>
+							<label class="rating__star" for="mood-2" aria-label="Сносно"></label>
+							<input class="rating__input" id="mood-3" type="radio" name="mood" value="3" checked=""/>
+							<label class="rating__star" for="mood-3" aria-label="Нормально"></label>
+							<input class="rating__input" id="mood-4" type="radio" name="mood" value="4"/>
+							<label class="rating__star" for="mood-4" aria-label="Хорошо"></label>
+							<input class="rating__input" id="mood-5" type="radio" name="mood" value="5"/>
+							<label class="rating__star" for="mood-5" aria-label="Отлично"></label>
+							<div class="rating__focus"></div>
+						</div>
+					</div>
+					<div class="form-wrap__input-wrap form-group">
+						<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="О чем ваш отзыв?"/><span class="form-wrap__input-title">О чем ваш отзыв?</span><span class="form-wrap__required-star">*</span>
+						</label>
+						<p>Опишите в кратце о чем собираетесь донести пользователям</p>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap"><span class="form-wrap__input-title">Выбрать категорию</span>
+						<select class="custom-select custom-select--js" name="category" data-placeholder="&lt;img src=&quot;img/svg/select-icon-5.svg&quot;&gt; Выбрать категорию"> 
+							<option data-img="img/svg/select-icon-1.svg" value="Промокоды">Промокоды</option>
+							<option data-img="img/svg/select-icon-2.svg" value="Еда и продукты">Еда и продукты</option>
+							<option data-img="img/svg/select-icon-3.svg" value="Одежда и обувь">Одежда и обувь</option>
+							<option data-img="img/svg/select-icon-4.svg" value="Электроника">Электроника</option>
+							<option data-img="img/svg/select-icon-1.svg" value="Промокоды">Промокоды</option>
+							<option data-img="img/svg/select-icon-2.svg" value="Еда и продукты">Еда и продукты</option>
+							<option data-img="img/svg/select-icon-3.svg" value="Одежда и обувь">Одежда и обувь</option>
+							<option data-img="img/svg/select-icon-4.svg" value="Электроника">Электроника</option>
+						</select>
+						<p>Выберите категорию к которой относится ваш отзыв</p>
+					</div>
+					<div class="form-wrap__input-wrap form-group">
+						<label><input class="form-wrap__input form-control" name="text" type="text" placeholder="Заголовок отзыва"/><span class="form-wrap__input-title">Заголовок отзыва</span><span class="form-wrap__required-star">*</span>
+						</label>
+						<p>Укажите заголовок вашего отзыва его увидят все</p>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<label><textarea class="form-wrap__input form-control" name="textarea" placeholder="Здесь ваш отзыв (не менее 100 символов)"></textarea><span class="form-wrap__input-title">Здесь ваш отзыв (не менее 100 символов)</span><span class="form-wrap__required-star">*</span>
+						</label>
+						<p>Не менее 100 символов</p>
+					</div>
+					<!-- +e.input-wrap-->
+					<input class="filepond" type="file" multiple="multiple" data-allow-reorder="true"/>
+					<div class="form-wrap__plusMinus">
+						<div class="form-wrap__switch form-check form-switch">
+							<input class="form-check-input" id="flexSwitchCheck" type="checkbox" role="switch"/>
+							<label class="form-check-label" for="flexSwitchCheck">Указать плюсы и&nbsp;минусы</label>
+						</div>
+						<div class="form-wrap__input-wrap form-group">
+							<label><textarea class="form-wrap__input form-control" name="textarea" placeholder="Плюсы"></textarea><span class="form-wrap__input-title">Плюсы</span><span class="form-wrap__required-star">*</span>
+							</label>
+							<p>Опишите плюсы как можно подробнее</p>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><textarea class="form-wrap__input form-control" name="textarea" placeholder="Минусы"></textarea><span class="form-wrap__input-title">Минусы</span><span class="form-wrap__required-star">*</span>
+							</label>
+							<p>Опишите минусы как можно подробнее</p>
+						</div>
+						<!-- +e.input-wrap-->
+					</div>
+					<div class="form-wrap__input-wrap form-group">
+						<label><input class="form-wrap__input form-control with-icon" name="text" type="text" placeholder="Автор" required="required" style="--bgImg: url(../img/svg/user.svg);"/><span class="form-wrap__input-title">Автор</span><span class="form-wrap__required-star">*</span>
+						</label>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__policy">Отправляя отзыв вы автоматически соглашаетесь с условиями  <a href="#">Пользовательского соглашения</a>
+					</div>
+				</div>
+				<div class="form-wrap__footer">
+					<div class="row">
+						<div class="col-auto ms-auto">
+							<button class="form-wrap__btn btn btn-light">Отмена
+							</button>
+						</div>
+						<div class="col-auto">
+							<button class="form-wrap__btn btn btn-primary" type="submit">Опубликовать
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- #modal-editing-->
 <!-- end modals-->

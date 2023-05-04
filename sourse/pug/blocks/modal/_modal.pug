@@ -117,7 +117,7 @@ mixin modal()
 							+e.BUTTON.btn.btn.btn-light Отмена
 						.col-auto
 							+e.BUTTON.btn.btn.btn-primary(type="submit") Опубликовать
-	// #modal-review
+	// #modal-review-2
 
 	div(id="modal-register"  style="display: none" )
 		+b.modal-register
@@ -137,7 +137,6 @@ mixin modal()
 				+e.enter Есть аккаунт? 
 					a(href="#") Войти
 				+e.A.terms(href="#") Условия использования
-				
 
 	// #modal-register
 
@@ -174,7 +173,7 @@ mixin modal()
 							+e.BUTTON.btn.btn.btn-light Отмена
 						.col-auto
 							+e.BUTTON.btn.btn.btn-primary(type="submit") Опубликовать
-	// #modal-review
+	// #modal-notifications
 
 	div(id="modal-my-reviews"  style="display: none" )
 		+b.modal-review--2
@@ -229,7 +228,7 @@ mixin modal()
 				+e.content
 					
 					
-	// #modal-review
+	// #modal-comments
 
 	div(id="modal-favorites"  style="display: none" )
 		+b.modal-review--2
@@ -240,6 +239,68 @@ mixin modal()
 				+e.content
 					
 					
-	// #modal-review
+	// #modal-favorites
+
+	div(id="modal-editing"  style="display: none" )
+		+b.modal-review--2
+			+modalSidebar
+			+form-wrap
+				+e.head
+					+e.title.form-data.h3(href='#') 
+						+icon('arrow-left')
+						| Добавление отзыва
+				+e.content
+					.rating
+						.rating__title Ваша оценка
+						.rating__group
+							input#mood-1.rating__input(type='radio' name='mood' value='1')
+							label.rating__star(for='mood-1' aria-label='Ужасно')
+							input#mood-2.rating__input(type='radio' name='mood' value='2')
+							label.rating__star(for='mood-2' aria-label='Сносно')
+							input#mood-3.rating__input(type='radio' name='mood' value='3' checked='')
+							label.rating__star(for='mood-3' aria-label='Нормально')
+							input#mood-4.rating__input(type='radio' name='mood' value='4')
+							label.rating__star(for='mood-4' aria-label='Хорошо')
+							input#mood-5.rating__input(type='radio' name='mood' value='5')
+							label.rating__star(for='mood-5' aria-label='Отлично')
+							.rating__focus
+					+input("О чем ваш отзыв?")
+						p Опишите в кратце о чем собираетесь донести пользователям
+					//- +input("Выбрать категорию", "select")(style="--bgImg: url(../img/svg/catalog.svg);").with-icon
+					.form-wrap__input-wrap
+						span.form-wrap__input-title Выбрать категорию
+						select.custom-select.custom-select--js(name="category" data-placeholder=`<img src="img/svg/select-icon-5.svg"> Выбрать категорию`) 
+							option(data-img='img/svg/select-icon-1.svg' value='Промокоды') Промокоды
+							option(data-img='img/svg/select-icon-2.svg' value='Еда и продукты') Еда и продукты
+							option(data-img='img/svg/select-icon-3.svg' value='Одежда и обувь') Одежда и обувь
+							option(data-img='img/svg/select-icon-4.svg' value='Электроника') Электроника
+							option(data-img='img/svg/select-icon-1.svg' value='Промокоды') Промокоды
+							option(data-img='img/svg/select-icon-2.svg' value='Еда и продукты') Еда и продукты
+							option(data-img='img/svg/select-icon-3.svg' value='Одежда и обувь') Одежда и обувь
+							option(data-img='img/svg/select-icon-4.svg' value='Электроника') Электроника
+						p Выберите категорию к которой относится ваш отзыв
+					+input("Заголовок отзыва")
+						p Укажите заголовок вашего отзыва его увидят все
+					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea")
+						p Не менее 100 символов
+					input(type="file" multiple data-allow-reorder="true").filepond
+					+e.plusMinus
+						+e.switch.form-check.form-switch
+							input#flexSwitchCheck.form-check-input(type='checkbox' role='switch')
+							label.form-check-label(for='flexSwitchCheck') Указать плюсы и&nbsp;минусы
+						+input("Плюсы", "textarea")
+							p Опишите плюсы как можно подробнее
+						+input("Минусы", "textarea")
+							p Опишите минусы как можно подробнее
+					+input("Автор")(required style="--bgImg: url(../img/svg/user.svg);").with-icon
+					+policy
+
+				+e.footer
+					.row
+						.col-auto.ms-auto
+							+e.BUTTON.btn.btn.btn-light Отмена
+						.col-auto
+							+e.BUTTON.btn.btn.btn-primary(type="submit") Опубликовать
+	// #modal-editing
 
 	// end modals
