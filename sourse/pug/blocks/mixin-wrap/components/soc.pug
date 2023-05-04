@@ -3,7 +3,7 @@ mixin item-sos(icon, bgColor, a='#')
 		if block
 			block
 		else
-			+icon(icon)
+			+img(`img/svg/${icon}.svg`).img-svg-js
 //- social buttons
 mixin soc()
 	+b.soc

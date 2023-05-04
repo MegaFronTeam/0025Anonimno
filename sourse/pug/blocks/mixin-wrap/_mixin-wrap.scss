@@ -48,7 +48,17 @@
 			font-size: rem(40) !important;
 		}
 	}
-
+	svg{
+		font-size: rem(32) !important;
+		width: 1em;
+		height: 1em;
+		@include media-breakpoint-up(sm) {
+			font-size: rem(40) !important;
+		}
+		path {
+			fill: currentColor;
+		}
+	}
 
 }
 
