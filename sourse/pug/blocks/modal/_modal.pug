@@ -70,18 +70,18 @@ mixin modal()
 					.rating
 						.rating__title Ваша оценка
 						.rating__group
-							input#mood-1.rating__input(type='radio' name='mood' value='1')
-							label.rating__star(for='mood-1' aria-label='Ужасно')
-							input#mood-2.rating__input(type='radio' name='mood' value='2')
-							label.rating__star(for='mood-2' aria-label='Сносно')
-							input#mood-3.rating__input(type='radio' name='mood' value='3' checked='')
-							label.rating__star(for='mood-3' aria-label='Нормально')
-							input#mood-4.rating__input(type='radio' name='mood' value='4')
-							label.rating__star(for='mood-4' aria-label='Хорошо')
-							input#mood-5.rating__input(type='radio' name='mood' value='5')
-							label.rating__star(for='mood-5' aria-label='Отлично')
+							input#mood-6.rating__input(type='radio' name='mood' value='6')
+							label.rating__star(for='mood-6' aria-label='Ужасно')
+							input#mood-7.rating__input(type='radio' name='mood' value='7')
+							label.rating__star(for='mood-7' aria-label='Сносно')
+							input#mood-8.rating__input(type='radio' name='mood' value='8' checked='')
+							label.rating__star(for='mood-8' aria-label='Нормально')
+							input#mood-9.rating__input(type='radio' name='mood' value='9')
+							label.rating__star(for='mood-9' aria-label='Хорошо')
+							input#mood-10.rating__input(type='radio' name='mood' value='10')
+							label.rating__star(for='mood-10' aria-label='Отлично')
 							.rating__focus
-					+input("О чем ваш отзыв?")
+					+input("", '', 'О чем ваш отзыв?')
 						p Опишите в кратце о чем собираетесь донести пользователям
 					//- +input("Выбрать категорию", "select")(style="--bgImg: url(../img/svg/catalog.svg);").with-icon
 					.form-wrap__input-wrap
@@ -96,20 +96,19 @@ mixin modal()
 							option(data-img='img/svg/select-icon-3.svg' value='Одежда и обувь') Одежда и обувь
 							option(data-img='img/svg/select-icon-4.svg' value='Электроника') Электроника
 						p Выберите категорию к которой относится ваш отзыв
-					+input("Заголовок отзыва")
+					+input("", '', 'Заголовок отзыва')
 						p Укажите заголовок вашего отзыва его увидят все
-					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea")
+					+input("Здесь ваш отзыв", "textarea", "Здесь ваш отзыв (не менее 100 символов)")
 						p Не менее 100 символов
 					input(type="file" multiple data-allow-reorder="true").filepond
 					+e.plusMinus
 						+e.switch.form-check.form-switch
 							input#flexSwitchCheck.form-check-input(type='checkbox' role='switch')
 							label.form-check-label(for='flexSwitchCheck') Указать плюсы и&nbsp;минусы
-						+input("Плюсы", "textarea")
+						+input("", "textarea", 'Плюсы')
 							p Опишите плюсы как можно подробнее
-						+input("Минусы", "textarea")
+						+input("", "textarea", 'Минусы')
 							p Опишите минусы как можно подробнее
-					+input("Автор")(required style="--bgImg: url(../img/svg/user.svg);").with-icon
 					+policy
 
 				+e.footer
@@ -185,13 +184,40 @@ mixin modal()
 					+e.title Мои отзывы
 				+e.content
 					+e.text Здесь ваши отзывы, вы можете создавать новые, редактировать и удалять свои отзывы
-					+e.on-moderate
+					+e.on-moderate(href='#')
 						div
-							p Отзывы на модерации
-							span Отзывы которые находятся на модерации
+							.h6 Отзывы на модерации
+							p Отзывы которые находятся на модерации
 						span 4
 						+icon('chevron-right')
-
+					+e.content-row.row
+						.col-12
+							+review('Наушники True Wireless JBL Tune 230NC TWS Black', 'Если&nbsp;бы и&nbsp;хотел придраться, то&nbsp;совершенно нет оснований. Сели идеально, хотя раньше перепробовал несколько...', '647', '180')
+						.col-12
+							+review('Телевизор Haier 55 Smart TV AX Pro', 'Супер телевизор! Отличная картинка, очень сочное изображение, которое можно настроить под себя. Звук...', '74', '14')
+						.col-12
+							+review('Наушники True Wireless JBL Tune 230NC TWS Black', 'Если&nbsp;бы и&nbsp;хотел придраться, то&nbsp;совершенно нет оснований. Сели идеально, хотя раньше перепробовал несколько...', '647', '180')
+						.col-12
+							+review('Телевизор Haier 55 Smart TV AX Pro', 'Супер телевизор! Отличная картинка, очень сочное изображение, которое можно настроить под себя. Звук...', '74', '14')
+				+e.footer
+					+e.BUTTON.btn.btn.btn-primary(type="submit") 
+						+icon('plus')
+						| Добавить отзыв
+	// #modal-review
+	
+	div(id="modal-on-moderate"  style="display: none" )
+		+b.modal-review--2
+			+modalSidebar
+			+b.modal-content
+				+e.head
+					+e.title.form-data.h3(href='#') 
+						+icon('arrow-left')
+						| На модерации
+				+e.content
+					+e.text Здесь ваши отзывы, вы можете создавать новые, редактировать и удалять свои отзывы
+					+e.content-row.row
+						.col-12
+							+review('Наушники True Wireless JBL Tune 230NC TWS Black', 'Если&nbsp;бы и&nbsp;хотел придраться, то&nbsp;совершенно нет оснований. Сели идеально, хотя раньше перепробовал несколько...', '647', '180')
 	// #modal-review
 
 	div(id="modal-comments"  style="display: none" )

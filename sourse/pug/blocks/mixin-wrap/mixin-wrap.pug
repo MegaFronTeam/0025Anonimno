@@ -99,3 +99,32 @@ mixin modalSidebar()
 		+e.log-out(href='#')
 			+icon('log-out')
 			| Выйти
+		
+mixin review(title, text, count, comm)
+	+b.review
+		.row
+			.col-sm
+				+e.inner-row.row
+					.col-auto
+						+e.rating
+							+img('img/svg/star-on.svg')
+							+img('img/svg/star-on.svg')
+							+img('img/svg/star-on.svg')
+							+img('img/svg/star-on.svg')
+							+img('img/svg/star-off.svg')
+					.col-auto
+						+e.date 16.09.2022
+				+e.title(href='#')!= title
+				p!= text
+				+e.inner-row.row
+					.col-auto
+						+e.info
+							+icon('eye')
+							span!= count
+					.col-auto
+						+e.info
+							+icon('comments')
+							span!= comm
+			.col-sm-auto
+				+e.control(href='#'): +icon('dots')
+				+e.control(href='#'): +icon('del')
