@@ -31,8 +31,8 @@
 	}
 
 	.fancybox__content > .f-button.is-close-btn {
-		--f-button-width: rem(24);
-		--f-button-height: rem(24);
+		--f-button-width: #{rem(40)};
+		--f-button-height: #{rem(40)};
 		--f-button-border-radius: 4px;
 		--f-button-color: #000000;
 		--f-button-hover-color: #000000;
@@ -40,11 +40,11 @@
 		--f-button-svg-height: #{rem(24)};
 		--f-button-outline-color: transparent;
 		--f-button-bg: transparent;
-    --f-button-hover-bg: transparent;
+    --f-button-hover-bg: #F2F2F2;
     --f-button-active-bg: transparent;
 		position: absolute;
-		top: rem(16);
-		right: rem(16);
+		top: rem(10);
+		right: rem(10);
 		opacity: 1;
 	}
 

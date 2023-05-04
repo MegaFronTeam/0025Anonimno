@@ -9,7 +9,13 @@
       "url": "#"
     }
   ],
-  "social": ["ok", "viber", "tg", "vkontakte", "whatsapp"],
+  "social": [
+    { "icon": "ok", "bgColor": "#ed812b" },
+    { "icon": "viber", "bgColor": "#6F5CEA" },
+    { "icon": "tg", "bgColor": "#0088cc" },
+    { "icon": "vkontakte", "bgColor": "#45668e" },
+    { "icon": "whatsapp", "bgColor": "#075e54" }
+  ],
   "index": {
     "head": {
       "title": "тест dffsdf dfsdтест 2222"

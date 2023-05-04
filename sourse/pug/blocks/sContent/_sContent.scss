@@ -106,13 +106,14 @@
 	}
 	&__socials-wrap {
 		display: flex;
+		// height: calc(100% - 147px);
 		@include media-breakpoint-up(lg) {
 			flex-direction: column;
 		}
 	}
 	&__back {
-		width: rem(38);
-		height: rem(38);
+		width: rem(32);
+		height: rem(32);
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
@@ -121,6 +122,10 @@
 		background-color: #F2F2F2;
 		margin-right: rem(16);
 		flex: 0 0 auto;
+		@include media-breakpoint-up(sm) {
+			width: rem(38);
+			height: rem(38);
+		}
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(41);
 			margin-right: 0;
@@ -129,7 +134,10 @@
 			background-color: $gray-500;
 		}
 		.icon {
-			font-size: rem(24);
+			font-size: rem(20);
+			@include media-breakpoint-up(sm) {
+				font-size: rem(24);
+			}
 		}
 	}
 	.soc {

@@ -51,7 +51,7 @@ mixin top-nav()
 				//- .col-auto.d-lg-none
 	// end top-nav
 
-mixin top-nav2() 
+mixin top-nav2(second) 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		+e.container.container-fluid.container-lg
@@ -65,5 +65,8 @@ mixin top-nav2()
 				.col-auto
 					+e.wrap
 						+e.btn.btn.btn-sm.btn-primary(href='#' data-src='#modal-review' data-fancybox).btn-modal-js.d-none.d-md-flex Добавить отзыв
-						+e.login.btn.btn-sm.btn-light(href='#' data-src='#modal-review' data-fancybox).btn-modal-js Войти
+						if second
+							+e.avatar(href='#'): +img('img/avatar-12.jpg')
+						else
+							+e.login.btn.btn-sm.btn-light(href='#' data-src='#modal-review' data-fancybox).btn-modal-js Войти
 	// end top-nav

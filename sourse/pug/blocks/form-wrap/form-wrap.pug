@@ -3,7 +3,7 @@ mixin form-head()
 		input(class="order", name='order', type='hidden', value=`Заявка  с сайта`) 
 		block
 
-mixin input(placeholder,  t='text', label= placeholder, name= t)
+mixin input(placeholder,  t='text', label= placeholder, name= t, customClass)
 	mixin t(t='text',placeholder, name= t)
 		if t== "textarea"
 			+e.TEXTAREA.input.form-control(name=name placeholder=placeholder)
@@ -19,7 +19,7 @@ mixin input(placeholder,  t='text', label= placeholder, name= t)
 			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder step='any')&attributes(attributes)
 		else
 			+e.INPUT.input.form-control(name=name type=t placeholder=placeholder)&attributes(attributes)
-	+e.input-wrap.form-group
+	+e.input-wrap.form-group(class=customClass)
 		if label
 			label
 				+t(t,placeholder, name)&attributes(attributes)
@@ -74,6 +74,5 @@ mixin add-file(n)
 
 
 mixin policy()
-	+e.policy
-		+in-c()(checked)
-			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+	+e.policy Отправляя отзыв вы автоматически соглашаетесь с условиями  
+		a(href="#") Пользовательского соглашения

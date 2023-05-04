@@ -9,7 +9,7 @@ $file-format: woff2;
 @include font-face ('SFProDisplay', $addr + "SFProDisplay-Regular", 400, $file-formats: $file-format);
 @include font-face ('SFProDisplay', $addr + "SFProDisplay-Bold", 700, $file-formats: $file-format);
 @include font-face ('SFProDisplay', $addr + "SFProDisplay-Semibold", 600, $file-formats: $file-format);
-// @include font-face ($default-font, $addr + "Roboto-Black/Roboto-Black", 900, $file-formats: $file-format);
+@include font-face ('SFProDisplay', $addr + "SFProDisplay-Medium", 500, $file-formats: $file-format);
 
 // font-weight helper:
 // 100 Thin

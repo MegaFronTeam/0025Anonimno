@@ -26,46 +26,32 @@ mixin sComments(second)
 					.col-auto
 						+e.set-comm.btn.btn-primary(href='#') Оставить комментарий
 			+e.comments
-				+e.comment
-					+e.avatar(style="--bgColor: #FFCC00"): +img('img/avatar-1.jpg')
-					+e.comment-wrap
-						.row
-							.col-auto
-								+e.name &lt;Username&gt;
-							.col-auto
-								+e.date date/time
-						p Я&nbsp;вот читаю из&nbsp;года в&nbsp;год из&nbsp;десятилетие в&nbsp;десятилетие&nbsp;&mdash; постоянно цены растут, а&nbsp;зарплаты- нет. Значит раньше люди жили сказочно богато? Если нищаем, нищаем..
-						.row
-							.col
-								+e.call-back(href='#') Ответить
-							.col-auto
-								+e.likes
-									+e.btn(href='#')
-										+icon('like')
-										| 24
-									+e.btn(href='#')
-										+icon('dislike')
-										| 4
-				+e.comment--answer
-					+e.avatar(style="--bgColor: #D0D0D0"): +img('img/avatar-2.jpg')
-					+e.comment-wrap
-						.row
-							.col-auto
-								+e.name &lt;Username&gt;
-							.col-auto
-								+e.date date/time
-						p Я&nbsp;вот читаю из&nbsp;года в&nbsp;год из&nbsp;десятилетие в&nbsp;десятилетие&nbsp;&mdash; постоянно цены растут, а&nbsp;зарплаты- нет. Значит раньше люди жили сказочно богато? Если нищаем, нищаем..
-						.row
-							.col
-								+e.call-back(href='#') Ответить
-							.col-auto
-								+e.likes
-									+e.btn(href='#')
-										+icon('like')
-										| 24
-									+e.btn(href='#')
-										+icon('dislike')
-										| 4
+				mixin comment(img, color, name, date)
+					+e.comment&attributes(attributes)
+						+e.avatar(color ? style=`--bgColor: ${color}` : ''): +img(`img/${img}`)
+						+e.comment-wrap
+							.row
+								.col-auto
+									+e.name!= name
+								.col-auto
+									+e.date!= date
+							p Я&nbsp;вот читаю из&nbsp;года в&nbsp;год из&nbsp;десятилетие в&nbsp;десятилетие&nbsp;&mdash; постоянно цены растут, а&nbsp;зарплаты- нет. Значит раньше люди жили сказочно богато? Если нищаем, нищаем..
+							.row
+								.col
+									+e.call-back(href='#') Ответить
+								.col-auto
+									+e.likes
+										+e.btn(href='#')
+											+icon('like')
+											| 24
+										+e.btn(href='#')
+											+icon('dislike')
+											| 4
+				if second
+					block
+				else
+					+comment('avatar-1.jpg', '#FFCC00', '&lt;Username&gt;', 'date/time')
+					+comment('avatar-2.jpg', '#D0D0D0', '&lt;Username&gt;', 'date/time').--answer
 			+e.show-more.btn.btn-light(href='#') Ещё 30 комментариев из 180
 			if !second
 				+e.chat
