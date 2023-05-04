@@ -515,6 +515,7 @@ function eventHandler() {
 					`
 				});
 			}
+			
 		}
 		if(modalTarget) {
 			$('.custom-select--js').select2({
