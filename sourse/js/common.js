@@ -1,7 +1,9 @@
 "use strict";
 const JSCCommon = { 
+
 	modalCall() {
 		const link = '.btn-modal-js';
+
 		Fancybox.bind(link, {
 			arrows: false,
 			// // infobar: false,
@@ -29,6 +31,10 @@ const JSCCommon = {
 				AJAX_FORBIDDEN: "Ошибка при загрузке AJAX: запрещено",
 				IFRAME_ERROR: "Ошибка загрузки iframe",
 			},
+			on: {
+				"done": fancybox => this.forEditor(fancybox, this.makeTinyMceEditor),
+				"close": fancybox => this.forEditor(fancybox, this.removeEditor),
+			}
 		});
 		document.querySelectorAll(".modal-close-js").forEach(el=>{
 			el.addEventListener("click", ()=>{
@@ -349,7 +355,26 @@ const JSCCommon = {
 				btnDisabled.attr('disabled', 'disabled');
 			}
 		})
-	}
+	},
+	makeTinyMceEditor(selector = 'textarea.textarea-js') {
+		tinymce.init({
+			selector,
+			plugins: 'lists',
+			placeholder: 'Здесь ваш отзыв',
+			menubar: false,
+			toolbar_location: 'bottom',
+			toolbar: 'blockquote bold h1 italic bullist numlist'
+		});
+		},
+	removeEditor(selector = "textarea"){
+		tinymce.activeEditor.remove(selector); 
+		},
+	forEditor(fancybox, event){
+			let text = `.${fancybox.container.className} .textarea-js`;
+			if (!document.querySelector(text)) return;
+			event(text);
+		}
+
 };
 const $ = jQuery;
 
@@ -495,29 +520,29 @@ function eventHandler() {
 		}
   });
 
+	const inputElements = document.querySelectorAll('.filepond');
+	if (inputElements) {
+		FilePond.registerPlugin(FilePondPluginImagePreview);
+		for (const inputElement of inputElements) {
+			const pond = FilePond.create(inputElement, {
+				iconRemove: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12L4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+				labelIdle: `
+					<div class='customText-wrap'>
+						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="40" height="40" rx="20" fill="white"/>
+							<path d="M20.7539 13.4639L23.4432 16.1532C23.7361 16.4461 24.211 16.4461 24.5039 16.1532C24.7968 15.8603 24.7968 15.3855 24.5039 15.0926L20.711 11.2997C20.3205 10.9091 19.6873 10.9091 19.2968 11.2997L15.5039 15.0926C15.211 15.3855 15.211 15.8603 15.5039 16.1532C15.7968 16.4461 16.2717 16.4461 16.5646 16.1532L19.2539 13.4639V22.8426C19.2539 23.2568 19.5897 23.5926 20.0039 23.5926C20.4181 23.5926 20.7539 23.2568 20.7539 22.8426V13.4639Z" fill="black"/>
+							<path d="M11 23.75C11 23.3358 11.3358 23 11.75 23C12.1642 23 12.5 23.3358 12.5 23.75V26.9999C12.5 27.2761 12.7239 27.4999 13 27.4999H27C27.2761 27.4999 27.5 27.2761 27.5 26.9999V23.75C27.5 23.3358 27.8358 23 28.25 23C28.6642 23 29 23.3358 29 23.75V26.9999C29 28.1045 28.1046 28.9999 27 28.9999H13C11.8954 28.9999 11 28.1045 11 26.9999V23.75Z" fill="black"/>
+						</svg>
+						<div class='h5'>Добавить фотографии или видео</div>
+						<p>Перетащите файлы сюда или <span>нажмите чтобы загрузить</span></p>
+					</div>
+				`
+			});
+		}
+
+	}
 	document.addEventListener('click', function(event) {
 		let modalTarget = event.target.closest('[data-fancybox]')
-		const inputElements = document.querySelectorAll('.filepond');
-		if(modalTarget) {
-			FilePond.registerPlugin(FilePondPluginImagePreview);
-			for (const inputElement of inputElements) {
-				const pond = FilePond.create(inputElement, {
-					iconRemove: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12L4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-					labelIdle: `
-						<div class='customText-wrap'>
-							<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<rect width="40" height="40" rx="20" fill="white"/>
-								<path d="M20.7539 13.4639L23.4432 16.1532C23.7361 16.4461 24.211 16.4461 24.5039 16.1532C24.7968 15.8603 24.7968 15.3855 24.5039 15.0926L20.711 11.2997C20.3205 10.9091 19.6873 10.9091 19.2968 11.2997L15.5039 15.0926C15.211 15.3855 15.211 15.8603 15.5039 16.1532C15.7968 16.4461 16.2717 16.4461 16.5646 16.1532L19.2539 13.4639V22.8426C19.2539 23.2568 19.5897 23.5926 20.0039 23.5926C20.4181 23.5926 20.7539 23.2568 20.7539 22.8426V13.4639Z" fill="black"/>
-								<path d="M11 23.75C11 23.3358 11.3358 23 11.75 23C12.1642 23 12.5 23.3358 12.5 23.75V26.9999C12.5 27.2761 12.7239 27.4999 13 27.4999H27C27.2761 27.4999 27.5 27.2761 27.5 26.9999V23.75C27.5 23.3358 27.8358 23 28.25 23C28.6642 23 29 23.3358 29 23.75V26.9999C29 28.1045 28.1046 28.9999 27 28.9999H13C11.8954 28.9999 11 28.1045 11 26.9999V23.75Z" fill="black"/>
-							</svg>
-							<div class='h5'>Добавить фотографии или видео</div>
-							<p>Перетащите файлы сюда или <span>нажмите чтобы загрузить</span></p>
-						</div>
-					`
-				});
-			}
-
-		}
 		
 		if(modalTarget) {
 			$('.custom-select--js').select2({
@@ -541,7 +566,7 @@ function eventHandler() {
 	});
 
 	document.addEventListener('click', function(event) {
-		let modalTarget = event.target.closest('[data-fancybox');
+		let modalTarget = event.target.closest('[data-fancybox]');
 		if(modalTarget) {
 			try {
 				let imgItems = document.querySelectorAll('.form-wrap__item');
@@ -583,19 +608,12 @@ function eventHandler() {
 	});
 
 
-	document.addEventListener('click', function(event) {
-		let modalTarget = event.target.closest('[data-fancybox');
-		if(modalTarget) {
-			tinymce.init({
-				selector: 'textarea.textarea-js',
-				plugins: 'lists',
-				placeholder: 'Здесь ваш отзыв',
-				menubar: false,
-				toolbar_location: 'bottom',
-				toolbar: 'blockquote bold h1 italic bullist numlist'
-			});
-		}
-	});
+	// document.addEventListener('click', function(event) {
+		// let modalTarget = event.target.closest('[data-fancybox');
+		// if(modalTarget) {
+	
+		// }
+	// });
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
