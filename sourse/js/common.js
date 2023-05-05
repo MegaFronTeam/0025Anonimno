@@ -582,6 +582,20 @@ function eventHandler() {
 		}
 	});
 
+
+	document.addEventListener('click', function(event) {
+		let modalTarget = event.target.closest('[data-fancybox');
+		if(modalTarget) {
+			tinymce.init({
+				selector: 'textarea.textarea-js',
+				plugins: 'lists',
+				placeholder: 'Здесь ваш отзыв',
+				menubar: false,
+				toolbar_location: 'bottom',
+				toolbar: 'blockquote bold h1 italic bullist numlist'
+			});
+		}
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

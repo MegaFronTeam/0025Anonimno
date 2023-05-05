@@ -50,6 +50,7 @@
     "inputmask": "^5.0.8",
     "jquery": "^3.6.3",
     "select2": "^4.1.0-rc.0",
-    "swiper": "^9.2.2"
+    "swiper": "^9.2.2",
+    "tinymce": "^6.4.2"
   }
 }
