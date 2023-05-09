@@ -538,28 +538,43 @@ function eventHandler() {
 					</div>
 				`
 			});
+
+			const radioTemplate = (id) =>{
+				return ` 
+						<input type="radio" name="param[ID]" value="${id}"/>
+				`
+			}
+			pond.on('addfile', (error, file) => {
+				if (error) {
+					console.log('Oh no');
+					return;
+				}
+
+				document.querySelector(`#filepond--item-${file.id}`).insertAdjacentHTML("beforeend", radioTemplate(file.id));
+				console.log('File added', file.id);
+			});
 		}
 
 	}
-	document.addEventListener('click', function(event) {
-		let modalTarget = event.target.closest('[data-fancybox]')
-		
-		if(modalTarget) {
-			$('.custom-select--js').select2({
-				minimumResultsForSearch: -1,
-				templateResult: format,
-				templateSelection: format,
-				escapeMarkup: function(m) {
-					return m;
-				},
-			}).val(null).trigger("change");
+	$('.custom-select--js').select2({
+		minimumResultsForSearch: -1,
+		templateResult: format,
+		templateSelection: format,
+		escapeMarkup: function(m) {
+			return m;
+		},
+	}).val(null).trigger("change");
 
-			function format(state) {
-				if (!state.id) return state.text; // optgroup
-				return '<img src="' + state.element.dataset.img + '"/>' + state.text;
-			}
-		}
-	})
+	function format(state) {
+		if (!state.id) return state.text; // optgroup
+		return '<img src="' + state.element.dataset.img + '"/>' + state.text;
+	}
+	// document.addEventListener('click', function(event) {
+	// 	let modalTarget = event.target.closest('[data-fancybox]')
+		
+	// 	if(modalTarget) {
+	// 	}
+	// })
 
 	$('.backToTop').on('click', function() {
 		window.scroll(0, 0);

@@ -400,6 +400,7 @@
 		flex-wrap: wrap;
 	}
 	&--item {
+		max-width: 140px;
 		@include block(1,1);
 		width: calc((100% / 2) - 0.5em);
 		height: auto !important;
