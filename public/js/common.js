@@ -32,8 +32,8 @@ const JSCCommon = {
 				IFRAME_ERROR: "Ошибка загрузки iframe",
 			},
 			on: {
-				"done": fancybox => this.forEditor(fancybox, this.makeTinyMceEditor),
-				"close": fancybox => this.forEditor(fancybox, this.removeEditor),
+				// "loading": fancybox => this.forEditor(fancybox, this.makeTinyMceEditor),
+				// "close": fancybox => this.forEditor(fancybox, this.removeEditor),
 			}
 		});
 		document.querySelectorAll(".modal-close-js").forEach(el=>{
@@ -49,6 +49,9 @@ const JSCCommon = {
 			if(!element) return;
 			let modal = document.querySelector(element.dataset.src);
 			const data = element.dataset;
+			console.log(modal.querySelector("textarea.textarea-js"));
+			
+
 
 			function setValue(val, elem) {
 				if (elem && val) {
@@ -388,6 +391,12 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
 	JSCCommon.disabledBtn();
+
+	JSCCommon.makeTinyMceEditor();
+	// let modalwithTextarea = document.querySelectorAll("textarea.textarea-js");
+	// for (const text of modalwithTextarea) {
+	// 	console.log(text);
+	// }
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	

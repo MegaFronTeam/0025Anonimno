@@ -36,7 +36,13 @@ mixin modal()
 							option(data-img='img/svg/select-icon-3.svg' value='Одежда и обувь') Одежда и обувь
 							option(data-img='img/svg/select-icon-4.svg' value='Электроника') Электроника
 					+input("Заголовок отзыва", '', 'Заголовок отзыва', '', 'custom-input-wrap')(required style="--bgImg: url(../img/svg/edit.svg);").with-icon
-					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea", 'Здесь ваш отзыв (не менее 100 символов)', '', 'custom-input-wrap')(required)
+
+					+input("Здесь ваш отзыв (не менее 100 символов)", "textarea", 'Здесь ваш отзыв (не менее 100 символов)', '', 'custom-input-wrap')(class="textarea-js")
+
+					div.form-wrap__input-wrap.form-group
+						textarea.form-wrap__input.form-control.textarea-js(name="textarea" placeholder="Здесь ваш отзыв")
+						span.form-wrap__input-title Здесь ваш отзыв (не менее 100 символов)
+						p Не менее 100 символов
 					input(type="file" multiple data-allow-reorder="true").filepond
 					+e.plusMinus
 						+e.switch.form-check.form-switch
@@ -101,9 +107,8 @@ mixin modal()
 					//- +input("Здесь ваш отзыв", "textarea", "Здесь ваш отзыв (не менее 100 символов)")
 					//- 	p Не менее 100 символов
 					div.form-wrap__input-wrap.form-group
-						label
-							textarea.form-wrap__input.form-control.textarea-js(name="textarea" placeholder="Здесь ваш отзыв")
-							span.form-wrap__input-title Здесь ваш отзыв (не менее 100 символов)
+						textarea.form-wrap__input.form-control.textarea-js(name="textarea" placeholder="Здесь ваш отзыв")
+						span.form-wrap__input-title Здесь ваш отзыв (не менее 100 символов)
 						p Не менее 100 символов
 					input(type="file" multiple data-allow-reorder="true").filepond
 					+e.plusMinus
