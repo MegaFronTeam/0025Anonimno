@@ -111,7 +111,7 @@ a {
 	background-color: $white;
 	max-width: 100%;
 	position: relative;
-	width: rem(850);
+	width: rem(1920);
 	min-height: rem(740);
 	box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
 	// padding: rem(32);
@@ -1074,4 +1074,53 @@ a {
 		// width: calc(rem(32) * 5);
 		width: calc(var(--starSize) * 5);
 	}
+}
+
+.filepond--item{
+	overflow: hidden;
+	input{
+		position: absolute;
+		right: 1px;
+		z-index: 10;
+		bottom: 1px;
+		width: 32px;
+		height: 32px;
+		border-radius: 8px 0 8px 0;
+		background-color: #F2F2F2;
+		opacity: 0.8;
+		background-image: url(../img/svg/home.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		// border-radius: 0;
+		appearance: none;
+		opacity: 0.8;
+		@include mt;
+		cursor: pointer;
+		&:hover,
+		&:checked{
+			opacity: 1;
+		}
+		&:checked{
+			background-color: $primary;
+		}
+	}
+}
+
+.filepond--image-preview-overlay-idle{
+	display: none !important;
+}
+// .filepond--image-canvas-wrapper{
+// 	transform: none !important;
+
+// }
+// .filepond--image-bitmap,
+// .filepond--image-preview-overlay-idle canvas,
+// .filepond--image-canvas-wrapper,
+// .filepond--image-clip{
+// 	width: 100% !important;
+// 	height: 100% !important;
+// }
+
+#modal-review  .filepond--item input{
+	display: none !important;
 }
