@@ -92,7 +92,7 @@
 			@include media-breakpoint-up(lg) {
 				display: flex;
 			}
-			@media (min-width: 1600px) {
+			@include media-breakpoint-up(lg) {
 				&::before {
 					content: '';
 					position: absolute;

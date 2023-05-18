@@ -26,7 +26,7 @@ mixin sNews(data)
 mixin sNews2(data)
 	// start sNews
 	+b.SECTION.sNews.section#sNews&attributes(attributes)
-		.container-fluid.custom-container
+		.container-fluid
 			mixin item(img, title, text)
 				+e.item(href='#')
 					+e.img-wrap
@@ -36,21 +36,21 @@ mixin sNews2(data)
 						p!= text
 						+e.tag Сервисы и услуги
 			+e.row.row
-				.col-md-6.col-xl-4.col-xxl-3
+				+e.col.col-md-6.col-xl-4.col-xxl-3
 					+item('sNews-img-5.png', 'ТОП-8 лучших интернет-магазинов для покупки ключей Steam&nbsp;&mdash; Рейтинг 2023 года', 'Если покупаете игры только в&nbsp;магазине Стим, то&nbsp;можете упустить выгодные предложения. Существует целая категория интернет-магазинов, продающих недорогие...')
-				.col-md-6.col-xl-4.col-xxl-3
+				+e.col.col-md-6.col-xl-4.col-xxl-3
 					+item('sNews-img-6.png', 'ТОП-8 лучших интернет-магазинов для покупки ключей Steam&nbsp;&mdash; Рейтинг 2023 года', 'Если покупаете игры только в&nbsp;магазине Стим, то&nbsp;можете упустить выгодные предложения. Существует целая категория интернет-магазинов, продающих недорогие...')
-				.col-md-6.col-xl-4.col-xxl-3
+				+e.col.col-md-6.col-xl-4.col-xxl-3
 					+item('sNews-img-7.png', 'ТОП-8 лучших интернет-магазинов для покупки ключей Steam&nbsp;&mdash; Рейтинг 2023 года', 'Если покупаете игры только в&nbsp;магазине Стим, то&nbsp;можете упустить выгодные предложения. Существует целая категория интернет-магазинов, продающих недорогие...')
-				.col-md-6.col-xl-4.col-xxl-3
+				+e.col.col-md-6.col-xl-4.col-xxl-3
 					+item('sNews-img-8.png', 'ТОП-8 лучших интернет-магазинов для покупки ключей Steam&nbsp;&mdash; Рейтинг 2023 года', 'Если покупаете игры только в&nbsp;магазине Стим, то&nbsp;можете упустить выгодные предложения. Существует целая категория интернет-магазинов, продающих недорогие...')
-				.col-md-6.col-xl-4.col-xxl-3.d-none.d-lg-block
+				+e.col.col-md-6.col-xl-4.col-xxl-3.d-none.d-lg-block
 					+item('sNews-img-1.png', 'ТОП-8 лучших интернет-магазинов для покупки ключей Steam&nbsp;&mdash; Рейтинг 2023 года', 'Если покупаете игры только в&nbsp;магазине Стим, то&nbsp;можете упустить выгодные предложения. Существует целая категория интернет-магазинов, продающих недорогие...')
-				.col-md-6.col-xl-4.col-xxl-3.d-none.d-lg-block
+				+e.col.col-md-6.col-xl-4.col-xxl-3.d-none.d-lg-block
 					+item('sNews-img-2.png', 'ТОП-8 лучших интернет-магазинов для покупки ключей Steam&nbsp;&mdash; Рейтинг 2023 года', 'Если покупаете игры только в&nbsp;магазине Стим, то&nbsp;можете упустить выгодные предложения. Существует целая категория интернет-магазинов, продающих недорогие...')
-				.col-md-6.col-xl-4.col-xxl-3.d-none.d-xxl-block
+				+e.col.col-md-6.col-xl-4.col-xxl-3.d-none.d-xxl-block
 					+item('sNews-img-3.png', 'ТОП-8 лучших интернет-магазинов для покупки ключей Steam&nbsp;&mdash; Рейтинг 2023 года', 'Если покупаете игры только в&nbsp;магазине Стим, то&nbsp;можете упустить выгодные предложения. Существует целая категория интернет-магазинов, продающих недорогие...')
-				.col-md-6.col-xl-4.col-xxl-3.d-none.d-xxl-block
+				+e.col.col-md-6.col-xl-4.col-xxl-3.d-none.d-xxl-block
 					+item('sNews-img-4.png', 'ТОП-8 лучших интернет-магазинов для покупки ключей Steam&nbsp;&mdash; Рейтинг 2023 года', 'Если покупаете игры только в&nbsp;магазине Стим, то&nbsp;можете упустить выгодные предложения. Существует целая категория интернет-магазинов, продающих недорогие...')
 			+pagin-lg().d-none.d-lg-block
 			+pagin-sm().d-block.d-lg-none
