@@ -3,7 +3,7 @@ mixin modal()
 	//  start modals
 	mixin editor()
 		.editor Hello Summernote
-	div(id="modal-review"   )
+	div(id="modal-review" style="display: none")
 		+b.modal-review
 			+form-wrap
 				+e.head
@@ -39,8 +39,8 @@ mixin modal()
 					+input("Заголовок отзыва", '', 'Заголовок отзыва', '', 'custom-input-wrap')(required style="--bgImg: url(../img/svg/edit.svg);").with-icon
 
 					div.form-wrap__input-wrap.form-group
+						span.form-wrap__input-title Ваш отзыв
 						+editor()
-						span.form-wrap__input-title Здесь ваш отзыв (не менее 100 символов)
 						p Не менее 100 символов
 					input(type="file" multiple data-allow-reorder="true").filepond
 					+e.plusMinus
@@ -106,8 +106,8 @@ mixin modal()
 					//- +input("Здесь ваш отзыв", "textarea", "Здесь ваш отзыв (не менее 100 символов)")
 					//- 	p Не менее 100 символов
 					div.form-wrap__input-wrap.form-group
+						span.form-wrap__input-title Ваш отзыв
 						+editor()
-						span.form-wrap__input-title Здесь ваш отзыв (не менее 100 символов)
 						p Не менее 100 символов
 
 					input(type="file" multiple data-allow-reorder="true").filepond
