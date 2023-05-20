@@ -328,14 +328,13 @@ function eventHandler() {
 			height: '250px',
 			initialEditType: 'wysiwyg',
 			usageStatistics: true,
-			initialValue: 'Здесь ваш отзыв',
+			placeholder: 'Здесь ваш отзыв',
 			previewHighlight:false,
-			// initialValue: content
+			initialValue: ' ',
 			toolbarItems: [
 				['quote', 'bold', 'heading', 'italic', 'ul', 'ol']
 			]
 		});
-		
 	}
 
 	// $('.standalone-container').summernote();
