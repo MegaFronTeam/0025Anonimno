@@ -14,7 +14,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/>
 		<link href="libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css" rel="stylesheet"/>
 		<link href="libs/filepond/filepond.min.css" rel="stylesheet"/>
-		<link href="libs/select2/css/select2.min.css" rel="stylesheet"/>
+		<link href="libs/select2/css/select2.min.css" rel="stylesheet"/><link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
 		<link href="css/main.min.css" rel="stylesheet"/>
 		<script>
 			function addBlock(elem) {
@@ -193,7 +193,7 @@
 			<div id="footerWrap"></div>
 		</div>
 		<!--  start modals-->
-		<div id="modal-review" style="display: none">
+		<div id="modal-review">
 			<div class="modal-review">
 				<div class="form-wrap">
 					<form>
@@ -240,13 +240,8 @@
 								</label>
 							</div>
 							<!-- +e.input-wrap-->
-							<div class="form-wrap__input-wrap form-group custom-input-wrap">
-								<label><textarea class="form-wrap__input form-control" name="" placeholder="Здесь ваш отзыв (не менее 100 символов)"></textarea><span class="form-wrap__input-title">Здесь ваш отзыв (не менее 100 символов)</span><span class="form-wrap__required-star">*</span>
-								</label>
-							</div>
-							<!-- +e.input-wrap-->
 							<div class="form-wrap__input-wrap form-group">
-								<textarea class="form-wrap__input form-control textarea-js" name="textarea" placeholder="Здесь ваш отзыв"></textarea><span class="form-wrap__input-title">Здесь ваш отзыв (не менее 100 символов)</span>
+								<div class="editor">Hello Summernote</div><span class="form-wrap__input-title">Здесь ваш отзыв (не менее 100 символов)</span>
 								<p>Не менее 100 символов</p>
 							</div>
 							<input class="filepond" type="file" multiple="multiple" data-allow-reorder="true"/>
@@ -369,7 +364,7 @@
 							</div>
 							<!-- +e.input-wrap-->
 							<div class="form-wrap__input-wrap form-group">
-								<textarea class="form-wrap__input form-control textarea-js" name="textarea" placeholder="Здесь ваш отзыв"></textarea><span class="form-wrap__input-title">Здесь ваш отзыв (не менее 100 символов)</span>
+								<div class="editor">Hello Summernote</div><span class="form-wrap__input-title">Здесь ваш отзыв (не менее 100 символов)</span>
 								<p>Не менее 100 символов</p>
 							</div>
 							<input class="filepond" type="file" multiple="multiple" data-allow-reorder="true"/>
@@ -1022,8 +1017,7 @@
 		<script src="libs/hc-sticky/hc-sticky.js"> </script>
 		<script src="libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
 		<script src="libs/filepond/filepond.min.js"> </script>
-		<script src="libs/select2/js/select2.min.js"> </script>
-		<script src="libs/tinymce/tinymce.min.js"> </script>
+		<script src="libs/select2/js/select2.min.js"> </script><script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js""></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

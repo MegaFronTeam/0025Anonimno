@@ -32,7 +32,7 @@ const JSCCommon = {
 				IFRAME_ERROR: "Ошибка загрузки iframe",
 			},
 			on: {
-				// "loading": fancybox => this.forEditor(fancybox, this.makeTinyMceEditor),
+				// "done": fancybox => this.forEditor(fancybox, this.makeTinyMceEditor),
 				// "close": fancybox => this.forEditor(fancybox, this.removeEditor),
 			}
 		});
@@ -161,79 +161,6 @@ const JSCCommon = {
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
 		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
 		Inputmask({"mask":"+9(999)999-99-99", showMaskOnHover: false}).mask(InputTel);
-	},
-	// /inputMask
-	sendForm() {
-		var gets = (function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
-			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
-			}
-			return b;
-		})();
-		// form
-		$(document).on('submit', "form", function (e) {
-			e.preventDefault();
-			const th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-			$.ajax({
-				url: 'action.php',
-				type: 'POST',
-				data: data,
-			}).done(function (data) {
-
-				Fancybox.close();
-				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
-				// window.location.replace("/thanks.html");
-				setTimeout(function () {
-					// Done Functions
-					th.trigger("reset");
-					// $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
-				}, 4000);
-			}).fail(function () { });
-
-		});
-
-
-		// async function submitForm(event) {
-		// 	event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
-		// 	try {
-		// 		// Формируем запрос
-		// 		const response = await fetch(event.target.action, {
-		// 			method: 'POST',
-		// 			body: new FormData(event.target)
-		// 		});
-		// 		// проверяем, что ответ есть
-		// 		if (!response.ok) throw (`Ошибка при обращении к серверу: ${response.status}`);
-		// 		// проверяем, что ответ действительно JSON
-		// 		const contentType = response.headers.get('content-type');
-		// 		if (!contentType || !contentType.includes('application/json')) {
-		// 			throw ('Ошибка обработки. Ответ не JSON');
-		// 		}
-		// 		// обрабатываем запрос
-		// 		const json = await response.json();
-		// 		if (json.result === "success") {
-		// 			// в случае успеха
-		// 			alert(json.info);
-		// 		} else {
-		// 			// в случае ошибки
-		// 			console.log(json);
-		// 			throw (json.info);
-		// 		}
-		// 	} catch (error) { // обработка ошибки
-		// 		alert(error);
-		// 	}
-		// }
 	},
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
@@ -392,7 +319,28 @@ function eventHandler() {
 	JSCCommon.makeDDGroup();
 	JSCCommon.disabledBtn();
 
-	JSCCommon.makeTinyMceEditor();
+
+	let editors = document.querySelectorAll(".editor");
+	for (const el of editors) {
+		
+		const viewer = new toastui.Editor({
+			el,
+			height: '500px',
+			initialEditType: 'wysiwyg',
+			usageStatistics: true,
+			initialValue: 'Здесь ваш отзыв',
+			previewHighlight:false,
+			// initialValue: content
+			toolbarItems: [
+				['quote', 'bold', 'heading', 'italic', 'ul', 'ol']
+			]
+		});
+		
+	}
+
+	// $('.standalone-container').summernote();
+
+	// JSCCommon.makeTinyMceEditor();
 	// let modalwithTextarea = document.querySelectorAll("textarea.textarea-js");
 	// for (const text of modalwithTextarea) {
 	// 	console.log(text);
