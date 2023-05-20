@@ -325,7 +325,7 @@ function eventHandler() {
 		
 		const viewer = new toastui.Editor({
 			el,
-			height: '500px',
+			height: '250px',
 			initialEditType: 'wysiwyg',
 			usageStatistics: true,
 			initialValue: 'Здесь ваш отзыв',
