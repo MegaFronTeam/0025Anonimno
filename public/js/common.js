@@ -320,11 +320,11 @@ function eventHandler() {
 	JSCCommon.disabledBtn();
 
 
-	let editors = document.querySelectorAll(".editor");
+	let editors = document.querySelectorAll(".editor-wrap");
 	for (const el of editors) {
 		
 		const viewer = new toastui.Editor({
-			el,
+			el: el.querySelector(".editor"),
 			height: '250px',
 			initialEditType: 'wysiwyg',
 			usageStatistics: true,
@@ -333,9 +333,18 @@ function eventHandler() {
 			initialValue: ' ',
 			toolbarItems: [
 				['quote', 'bold', 'heading', 'italic', 'ul', 'ol']
-			]
+			],
+			events: {
+				"change": ()=>{
+					el.querySelector(".editor-textarea-js").innerHTML = viewer.getHTML();
+				}
+			}
 		});
 	}
+
+
+
+
 
 	// $('.standalone-container').summernote();
 

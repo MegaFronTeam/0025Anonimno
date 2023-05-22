@@ -2,7 +2,9 @@
 mixin modal() 
 	//  start modals
 	mixin editor()
-		.editor Hello Summernote
+		.editor-wrap
+			.editor Hello Summernote
+			textarea.editor-textarea-js.d-none
 	div(id="modal-review" style="display: none")
 		+b.modal-review
 			+form-wrap
