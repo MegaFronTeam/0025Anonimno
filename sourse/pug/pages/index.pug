@@ -9,7 +9,7 @@ include ../blocks/sNews/_sNews.pug
 include ../blocks/sComments/_sComments.pug
 
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= 'article-page' 
 	- let  bg= 'main.jpg'
 
 block title
@@ -19,7 +19,7 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+parts('header')
+	+parts('header2')
 	main
 		//- +headerBlock
 		.container-fluid.container-lg
